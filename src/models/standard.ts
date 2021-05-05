@@ -1,4 +1,5 @@
 import { IterableChangeRecord } from "@angular/core";
+import { IExam } from "./exam";
 import { IStudent } from "./student";
 import { ITeacher } from "./teacher";
 

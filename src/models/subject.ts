@@ -1,4 +1,4 @@
-export enum Subject{
+export enum subject{
     ENGLISH,
     HINDI,
     MATHS,
