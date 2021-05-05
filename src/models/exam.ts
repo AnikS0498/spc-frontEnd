@@ -1,3 +1,5 @@
+import { IStandard } from "./standard";
+import { subject } from "./subject";
 
 export interface IExam {
     id: number;

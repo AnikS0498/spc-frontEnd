@@ -7,10 +7,14 @@ import { AdminModule } from '../admin/admin.module';
 import { TeacherModule } from '../teacher/teacher.module';
 import { AccountantModule } from '../accountant/accountant.module';
 import { ParentModule } from '../parent/parent.module';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
