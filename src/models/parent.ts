@@ -1,3 +1,4 @@
+import { IConcern } from "./concern";
 import { IStudent } from "./student";
 
 export interface IParent{
