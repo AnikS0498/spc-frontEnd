@@ -9,12 +9,19 @@ import { AccountantModule } from '../accountant/accountant.module';
 import { ParentModule } from '../parent/parent.module';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { NavbarComponent } from './header/navbar/navbar.component';
+import { SchoolImageComponent } from './header/school-image/school-image.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CarouselComponent } from './carousel/carousel.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    NavbarComponent,
+    SchoolImageComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +29,8 @@ import { FooterComponent } from './footer/footer.component';
     AdminModule,
     TeacherModule,
     AccountantModule,
-    ParentModule
+    ParentModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
