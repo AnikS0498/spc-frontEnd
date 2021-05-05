@@ -5,5 +5,5 @@ export enum Subject{
     SOCIAL_STUDIES,
     SCIENCE,
     HISTORY_CIVICS,
-    GEOGRAPHY;
+    GEOGRAPHY
 }
