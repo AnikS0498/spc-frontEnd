@@ -32,18 +32,12 @@ const appRoutes: Routes = [
   { path: 'login/admin', component: LoginPageComponent },
   // { path: '', component: HomeComponent },
   { path: 'login/teacher', component: LoginPageComponent },
-  { path: 'login/parent', component: LoginPageComponent  },
-  { path: 'login/accountant', component: LoginPageComponent  },
-
+  { path: 'login/parent', component: LoginPageComponent },
+  { path: 'login/accountant', component: LoginPageComponent },
   { path: '', component: CarouselComponent },
-
-  // { path: 'servers/:id/edit', component: EditServerComponent  }  
-
   { path: '', component: CarouselComponent },
-  {path: 'aboutus',component: AboutComponent},
-  {path: 'contactus',component:ContactUsComponent }
-  // { path: 'servers/:id/edit', component: EditServerComponent  }
-
+  { path: 'aboutus', component: AboutComponent },
+  { path: 'contactus', component: ContactUsComponent }
 ];
 
 

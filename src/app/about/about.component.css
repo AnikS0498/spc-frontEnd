@@ -1,13 +1,17 @@
 .container {
   text-align: center;
   padding: 50px;
-  color: white;
+  /* color: white;  */
+  background-color: #3edbf0;
 }
-.about-component-description{
-    width: 700px;
-    margin: 50px 200px 10px 170px;
+.about-component-description {
+  width: 700px;
+  margin: 50px 200px 10px 170px;
 }
-h1,h2,h3,p {
+h1,
+h2,
+h3,
+p {
   font-family: "Montserrat", sans-serif;
   text-align: left;
 }

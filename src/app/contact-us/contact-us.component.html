@@ -1,30 +1,41 @@
-
-<div class="container mt-4" id="contact-us-component">
-    <!-- <img src="../../assets/Chalkboard Drawings.webp" alt="" height="500px" width="1120px"/> -->
-    <div class="contact-us-component-description">
-      <h1 style="text-align:centre;font-weight: bold; font-size: 28px;font-family: 'Times New Roman', Times, serif;">CONTACT US</h1>
-      <h2>
-        You can contact us with any querries and doubts, follow following links to reach out to us
-    </h2>
-      <br>
-      <br>
-      <br>
-      <h3 style="text-align:left; font-size: 28px;font-family: 'Times New Roman', Times, serif;">
-        connect with us on <a href="url" style="color: rgb(255, 0, 106)">Instagram</a></h3>
-
-        <h3 style="text-align:left; font-size: 28px;font-family: 'Times New Roman', Times, serif;">
-        connect with us on <a href="url" style="color: rgb(9, 9, 231)">Facebook</a></h3>
-
-        <h3 style="text-align:left; font-size: 28px;font-family: 'Times New Roman', Times, serif;">
-        connect with us on <a href="url" style="color: rgb(8, 201, 8)">Whatsapp</a></h3>
-
-        <h3 style="text-align:left; font-size: 28px;font-family: 'Times New Roman', Times, serif;">
-         connect with us on <a href="url" style="color: red">Gmail</a></h3>
-
-         <h3 style="text-align:left; font-size: 28px;font-family: 'Times New Roman', Times, serif;">
-        find us on <a href="url" style="color: rgb(54, 155, 15)">google maps</a></h3>
-
+<div class="container" id="about-us">
+  <form>
+    <div class="form-group col-lg-6">
+      <label for="exampleInputName1">Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="exampleInputName1"
+        placeholder="Your Name"
+      />
     </div>
-  </div>
-  <app-footer></app-footer>
-    
+    <div class="form-group col-lg-6">
+      <label for="exampleInputEmail1">Email address</label>
+      <input
+        type="email"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        placeholder="Enter email"
+      />
+      <small id="emailHelp" class="form-text text-muted"
+        >We'll never share your email with anyone else.</small
+      >
+    </div>
+    <div class="form-group col-lg-6">
+      <label for="exampleMobile">Mobile No.</label>
+      <input
+        type="text"
+        class="form-control"
+        id="exampleMobile"
+        placeholder="Mobile no."
+      />
+    </div>
+    <div class="form-group col-lg-6">
+      <label for="comments">Comments</label>
+      <textarea class="form-control" name="" id="comments" rows="3" placeholder="Write something here"></textarea>
+    </div>
+    <button class="ml-3" mat-raised-button color="primary">Submit</button>
+  </form>
+</div>
+<app-footer></app-footer>
