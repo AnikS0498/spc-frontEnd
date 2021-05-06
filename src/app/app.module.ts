@@ -15,6 +15,20 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CarouselComponent } from './carousel/carousel.component';
 import { LoginComponent } from './login/login.component';
 import { AboutComponent } from './about/about.component';
+import { Router, RouterModule, Routes } from '@angular/router';
+import { LoginPageComponent } from './login-page/login-page.component';
+
+
+const appRoutes: Routes = [
+  { path: 'login/admin', component: LoginPageComponent },
+  // { path: '', component: HomeComponent },
+  { path: 'login/teacher', component: LoginPageComponent },
+  { path: 'login/parent', component: LoginPageComponent  },
+  { path: 'login/accountant', component: LoginPageComponent  },
+  { path: '', component: CarouselComponent }
+  // { path: 'servers/:id/edit', component: EditServerComponent  }  
+];
+
 
 @NgModule({
   declarations: [
@@ -25,7 +39,8 @@ import { AboutComponent } from './about/about.component';
     SchoolImageComponent,
     CarouselComponent,
     LoginComponent,
-    AboutComponent
+    AboutComponent,
+    LoginPageComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +49,8 @@ import { AboutComponent } from './about/about.component';
     TeacherModule,
     AccountantModule,
     ParentModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
