@@ -25,6 +25,9 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 
 import { ContactUsComponent } from './contact-us/contact-us.component';
+import { RegisterComponent } from './register/register.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -37,7 +40,9 @@ const appRoutes: Routes = [
   { path: '', component: CarouselComponent },
   { path: '', component: CarouselComponent },
   { path: 'aboutus', component: AboutComponent },
-  { path: 'contactus', component: ContactUsComponent }
+  { path: 'contactus', component: ContactUsComponent },
+  { path: 'admin/register', component: RegisterComponent },
+  { path: 'forgot-password', component: ForgotPasswordComponent }
 ];
 
 
@@ -53,7 +58,9 @@ const appRoutes: Routes = [
     AboutComponent,
     LoginPageComponent,
     FeaturettesComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    RegisterComponent,
+    ForgotPasswordComponent
   ],
   imports: [
     BrowserModule,
@@ -67,6 +74,7 @@ const appRoutes: Routes = [
     MatFormFieldModule,
     MatInputModule,
     FormsModule,
+    HttpClientModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],

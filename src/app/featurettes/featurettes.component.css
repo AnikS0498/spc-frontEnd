@@ -1,7 +1,7 @@
 .featurette-heading{
     font-size: 2rem;
     font-weight: bold;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .lead{
@@ -11,8 +11,8 @@
 
 span{
     color: black;
-    font-size: 1rem;
-    font-family: 'Times New Roman', Times, serif;
+    font-size: .75rem;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .img-rounded{
@@ -24,3 +24,10 @@ span{
     position: relative;
     top: 80px; 
 }
+
+.featurette p {
+    font-size: 1.05rem;
+    font-family: 'Montserrat', sans-serif;
+    text-align: justify;
+  }
+
