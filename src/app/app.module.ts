@@ -13,6 +13,8 @@ import { NavbarComponent } from './header/navbar/navbar.component';
 import { SchoolImageComponent } from './header/school-image/school-image.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CarouselComponent } from './carousel/carousel.component';
+import { LoginComponent } from './login/login.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { CarouselComponent } from './carousel/carousel.component';
     FooterComponent,
     NavbarComponent,
     SchoolImageComponent,
-    CarouselComponent
+    CarouselComponent,
+    LoginComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

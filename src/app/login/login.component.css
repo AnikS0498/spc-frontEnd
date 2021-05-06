@@ -1,0 +1,27 @@
+.row {
+  font-family: "Itim", cursive;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 10px 30px 10px 30px;
+}
+#login-component .col-lg-3 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+#login-component h2 {
+  font-weight: bold;
+  font-family: "Montserrat", sans-serif;
+}
+#login-component .col-lg-3 p {
+  margin-right: 0.75rem;
+  margin-left: 0.75rem;
+}
+a{
+    color: grey;
+}
+a:hover{
+    color: #1cc5dc;
+}
+.container{
+    text-align: center;
+}
