@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { AccountantComponent } from './accountant-component/accountant.component';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    AccountantComponent
+  ],
   imports: [
     CommonModule
   ]
