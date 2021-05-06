@@ -17,6 +17,7 @@ import { LoginComponent } from './login/login.component';
 import { AboutComponent } from './about/about.component';
 import { Router, RouterModule, Routes } from '@angular/router';
 import { LoginPageComponent } from './login-page/login-page.component';
+import { FeaturettesComponent } from './featurettes/featurettes.component';
 
 
 const appRoutes: Routes = [
@@ -40,7 +41,8 @@ const appRoutes: Routes = [
     CarouselComponent,
     LoginComponent,
     AboutComponent,
-    LoginPageComponent
+    LoginPageComponent,
+    FeaturettesComponent
   ],
   imports: [
     BrowserModule,
