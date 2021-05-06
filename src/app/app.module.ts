@@ -17,18 +17,27 @@ import { LoginComponent } from './login/login.component';
 import { AboutComponent } from './about/about.component';
 import { Router, RouterModule, Routes } from '@angular/router';
 import { LoginPageComponent } from './login-page/login-page.component';
-import { HttpClientModule } from '@angular/common/http';
+import { FeaturettesComponent } from './featurettes/featurettes.component';
+
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
+
+import { ContactUsComponent } from './contact-us/contact-us.component';
+
 
 
 const appRoutes: Routes = [
   { path: 'login/admin', component: LoginPageComponent },
   // { path: '', component: HomeComponent },
   { path: 'login/teacher', component: LoginPageComponent },
-  { path: 'login/parent', component: LoginPageComponent  },
-  { path: 'login/accountant', component: LoginPageComponent  },
-  { path: '', component: CarouselComponent }
-  // { path: 'servers/:id/edit', component: EditServerComponent  }  
+  { path: 'login/parent', component: LoginPageComponent },
+  { path: 'login/accountant', component: LoginPageComponent },
+  { path: '', component: CarouselComponent },
+  { path: '', component: CarouselComponent },
+  { path: 'aboutus', component: AboutComponent },
+  { path: 'contactus', component: ContactUsComponent }
 ];
 
 
@@ -42,7 +51,9 @@ const appRoutes: Routes = [
     CarouselComponent,
     LoginComponent,
     AboutComponent,
-    LoginPageComponent
+    LoginPageComponent,
+    FeaturettesComponent,
+    ContactUsComponent
   ],
   imports: [
     BrowserModule,
@@ -51,10 +62,12 @@ const appRoutes: Routes = [
     TeacherModule,
     AccountantModule,
     ParentModule,
+    MatButtonModule,
     BrowserAnimationsModule,
-    RouterModule.forRoot(appRoutes),
-    HttpClientModule,
-    FormsModule
+    MatFormFieldModule,
+    MatInputModule,
+    FormsModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
