@@ -17,6 +17,7 @@ import { LoginComponent } from './login/login.component';
 import { AboutComponent } from './about/about.component';
 import { Router, RouterModule, Routes } from '@angular/router';
 import { LoginPageComponent } from './login-page/login-page.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
 
 
 const appRoutes: Routes = [
@@ -25,8 +26,10 @@ const appRoutes: Routes = [
   { path: 'login/teacher', component: LoginPageComponent },
   { path: 'login/parent', component: LoginPageComponent  },
   { path: 'login/accountant', component: LoginPageComponent  },
-  { path: '', component: CarouselComponent }
-  // { path: 'servers/:id/edit', component: EditServerComponent  }  
+  { path: '', component: CarouselComponent },
+  {path: 'aboutus',component: AboutComponent},
+  {path: 'contactus',component:ContactUsComponent }
+  // { path: 'servers/:id/edit', component: EditServerComponent  }
 ];
 
 
@@ -40,7 +43,8 @@ const appRoutes: Routes = [
     CarouselComponent,
     LoginComponent,
     AboutComponent,
-    LoginPageComponent
+    LoginPageComponent,
+    ContactUsComponent
   ],
   imports: [
     BrowserModule,
