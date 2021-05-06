@@ -27,6 +27,7 @@ import { FormsModule } from '@angular/forms';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { RegisterComponent } from './register/register.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -73,6 +74,7 @@ const appRoutes: Routes = [
     MatFormFieldModule,
     MatInputModule,
     FormsModule,
+    HttpClientModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],
