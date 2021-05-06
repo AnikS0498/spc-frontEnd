@@ -7,7 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarouselComponent implements OnInit {
 
+  show: boolean = false;
+
   constructor() { }
+
+  onClick(){
+    this.show = !this.show; 
+  }
 
   ngOnInit(): void {
   }

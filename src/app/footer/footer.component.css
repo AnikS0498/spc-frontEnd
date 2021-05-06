@@ -1,0 +1,35 @@
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+main > .container {
+    padding: 60px 15px 0;
+  }
+  
+  .footer {
+    background-color: rgb(184, 219, 219);
+    text-align: center;
+  }
+  
+  .footer > .container {
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-bottom: 2px;
+  }
+  
+  code {
+    font-size: 80%;
+  }
+
+  a{
+      color: inherit;
+  }
+
+  a:hover{
+      color: blue;
+  }
+
+  pre{
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      font-weight: bold;
+  }
