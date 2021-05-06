@@ -19,6 +19,14 @@ import { Router, RouterModule, Routes } from '@angular/router';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { FeaturettesComponent } from './featurettes/featurettes.component';
 
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
+
+import { ContactUsComponent } from './contact-us/contact-us.component';
+
+
 
 const appRoutes: Routes = [
   { path: 'login/admin', component: LoginPageComponent },
@@ -26,8 +34,16 @@ const appRoutes: Routes = [
   { path: 'login/teacher', component: LoginPageComponent },
   { path: 'login/parent', component: LoginPageComponent  },
   { path: 'login/accountant', component: LoginPageComponent  },
-  { path: '', component: CarouselComponent }
+
+  { path: '', component: CarouselComponent },
+
   // { path: 'servers/:id/edit', component: EditServerComponent  }  
+
+  { path: '', component: CarouselComponent },
+  {path: 'aboutus',component: AboutComponent},
+  {path: 'contactus',component:ContactUsComponent }
+  // { path: 'servers/:id/edit', component: EditServerComponent  }
+
 ];
 
 
@@ -42,7 +58,8 @@ const appRoutes: Routes = [
     LoginComponent,
     AboutComponent,
     LoginPageComponent,
-    FeaturettesComponent
+    FeaturettesComponent,
+    ContactUsComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +68,11 @@ const appRoutes: Routes = [
     TeacherModule,
     AccountantModule,
     ParentModule,
+    MatButtonModule,
     BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FormsModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],
