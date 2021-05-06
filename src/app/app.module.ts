@@ -17,6 +17,10 @@ import { LoginComponent } from './login/login.component';
 import { AboutComponent } from './about/about.component';
 import { Router, RouterModule, Routes } from '@angular/router';
 import { LoginPageComponent } from './login-page/login-page.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
 
 
 const appRoutes: Routes = [
@@ -26,6 +30,7 @@ const appRoutes: Routes = [
   { path: 'login/parent', component: LoginPageComponent  },
   { path: 'login/accountant', component: LoginPageComponent  },
   { path: '', component: CarouselComponent }
+
   // { path: 'servers/:id/edit', component: EditServerComponent  }  
 ];
 
@@ -49,7 +54,11 @@ const appRoutes: Routes = [
     TeacherModule,
     AccountantModule,
     ParentModule,
+    MatButtonModule,
     BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FormsModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],
