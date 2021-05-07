@@ -28,6 +28,7 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { RegisterComponent } from './register/register.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 
 
 
@@ -42,7 +43,8 @@ const appRoutes: Routes = [
   { path: 'aboutus', component: AboutComponent },
   { path: 'contactus', component: ContactUsComponent },
   { path: 'admin/register', component: RegisterComponent },
-  { path: 'forgot-password', component: ForgotPasswordComponent }
+  { path: 'forgot-password', component: ForgotPasswordComponent },
+  { path: 'admin/dashboard', component: AdminDashboardComponent }
 ];
 
 
@@ -60,7 +62,8 @@ const appRoutes: Routes = [
     FeaturettesComponent,
     ContactUsComponent,
     RegisterComponent,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
+    AdminDashboardComponent
   ],
   imports: [
     BrowserModule,
