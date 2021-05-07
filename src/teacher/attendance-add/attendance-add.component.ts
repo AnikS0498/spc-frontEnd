@@ -11,7 +11,7 @@ import { TeacherService } from 'src/services/teacher.service';
 export class AttendanceAddComponent implements OnInit {
 
   public attendance!: IAttendance;
-  public student!: IStudent;
+  student: number;
 
   constructor(private teacherService: TeacherService) { }
 

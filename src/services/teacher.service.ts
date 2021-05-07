@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
@@ -17,12 +17,16 @@ export class TeacherService {
 
   constructor(private http: HttpClient) { }
 
-  addExamDetails(exam:IExam,sId:number[]):Observable<IExam>{
-    return this.http.post<IExam>(`${this.apiServerUrl}/teacher/exam/add`,[exam,sId]);
+  addExamDetails(exam:IExam,sId:string):Observable<IExam>{
+    let param = new HttpParams().set("standardIdList", sId);
+    return this.http.post<IExam>(`${this.apiServerUrl}/teacher/exam/add`,exam,
+      {params: param});
   }
 
-  updateExamDetails(exam:IExam,sId:number[]):Observable<IExam>{
-    return this.http.put<IExam>(`${this.apiServerUrl}/teacher/exam/update`,[exam,sId]);
+  updateExamDetails(exam:IExam,sId:string):Observable<IExam>{
+    let param = new HttpParams().set("standardIdList", sId);
+    return this.http.post<IExam>(`${this.apiServerUrl}/teacher/exam/add`,exam,
+      {params: param});
   }
 
   addReportCardDetails(reportCard:IReportCard,sId:number):Observable<IReportCard>{

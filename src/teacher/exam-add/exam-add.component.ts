@@ -11,7 +11,8 @@ import { TeacherService } from 'src/services/teacher.service';
 export class ExamAddComponent implements OnInit {
 
   public exam!: IExam;
-  public standards:IStandard[]=[];
+  public standards:number[]=[116,117];
+  sIdList: string = this.standards.toString();
 
   constructor(private teacherService: TeacherService) { }
 
@@ -19,7 +20,7 @@ export class ExamAddComponent implements OnInit {
   }
 
   public addExam(){
-    this.teacherService.addExamDetails(this.exam,this.standards[]).subscribe(()=>{
+    this.teacherService.addExamDetails(this.exam,this.sIdList).subscribe(()=>{
     alert("Exam added successfully");
     });
   }
