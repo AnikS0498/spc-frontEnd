@@ -2,16 +2,5 @@
 <button (click)='onClickParent()'>GetAllParents</button>
 
 
-<button (click)='onClick()'>GetAllTeachers</button>
+<button (click)='onClickTeacher()'>GetAllTeachers</button>
 
-<div *ngIf='show'  class="col-md-6 col-xl-3">
-    <div class="card m-b-30">
-        <div class="card-body row">
-            <div class="col-6 card-title align-self-center mb-0" *ngFor="let teacher of teachers">
-                <h5>{{teacher.id}}</h5>
-                <h5>{{teacher.name}}</h5>
-                <h5>{{teacher.standard.grade}}</h5>
-             </div>
-        </div>
-    </div>
-</div>

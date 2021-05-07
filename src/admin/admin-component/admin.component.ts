@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Router, RouterModule } from '@angular/router';
+import { Router } from '@angular/router';
 import { IParent } from 'src/models/parent';
-import { ITeacher } from 'src/models/teacher';
 import { AdminService } from 'src/services/admin.service';
 
 @Component({
@@ -14,19 +13,15 @@ export class AdminComponent implements OnInit {
 
 
   public parent_obj!: IParent;
-  public teachers: ITeacher[]=[];
-  show:boolean=false;
 
   constructor(private adminService:AdminService,
               private router:Router) { }
 
  ngOnInit(): void {
- 
-    this.getTeachers();
   } 
 
-  onClick(){
-    this.show=!this.show;
+  onClickTeacher(){
+    this.router.navigate(['admin/getAllTeachers']);
   }
 
   onClickParent(){
@@ -44,14 +39,7 @@ export class AdminComponent implements OnInit {
 
   
 
-  public getTeachers(): void { 
-    this.adminService.getAllTeacher().subscribe({
-      next: teachers=>{
-        this.teachers = teachers;
-      },
-      error: err=> console.log(err)
-    });
-  }
+  
 
 
 }
