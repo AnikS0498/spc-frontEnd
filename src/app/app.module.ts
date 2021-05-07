@@ -25,20 +25,25 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 
 import { ContactUsComponent } from './contact-us/contact-us.component';
+import { RegisterComponent } from './register/register.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 
 
 
 const appRoutes: Routes = [
   { path: 'login/admin', component: LoginPageComponent },
-  // { path: '', component: HomeComponent },
   { path: 'login/teacher', component: LoginPageComponent },
   { path: 'login/parent', component: LoginPageComponent },
   { path: 'login/accountant', component: LoginPageComponent },
   { path: '', component: CarouselComponent },
   { path: '', component: CarouselComponent },
   { path: 'aboutus', component: AboutComponent },
-  { path: 'contactus', component: ContactUsComponent }
+  { path: 'contactus', component: ContactUsComponent },
+  { path: 'admin/register', component: RegisterComponent },
+  { path: 'forgot-password', component: ForgotPasswordComponent },
+  { path: 'admin/dashboard', component: AdminDashboardComponent }
 ];
 
 
@@ -54,7 +59,10 @@ const appRoutes: Routes = [
     AboutComponent,
     LoginPageComponent,
     FeaturettesComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    RegisterComponent,
+    ForgotPasswordComponent,
+    AdminDashboardComponent
   ],
   imports: [
     BrowserModule,

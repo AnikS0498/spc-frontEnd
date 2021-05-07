@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { IParent } from 'src/models/parent';
+import { IStudent } from 'src/models/student';
 import { AdminService } from 'src/services/admin.service';
 
 @Component({
@@ -10,19 +12,24 @@ import { AdminService } from 'src/services/admin.service';
 export class AdminGetAllParentsComponent implements OnInit {
 
   public parents: IParent[] = [];
-  
-  constructor(private adminService:AdminService) { }
+
+  constructor(private adminService: AdminService,
+    private router: Router) { }
 
   ngOnInit(): void {
     this.getParents();
   }
 
-  public getParents(): void { 
+  public getParents(): void {
     this.adminService.getAllParent().subscribe({
-      next: parents=>{
+      next: parents => {
         this.parents = parents;
       },
-      error: err=> console.log(err)
+      error: err => console.log(err)
     });
+  }
+
+  onBack(): void {
+    this.router.navigate(['/admin']);
   }
 }
