@@ -1,20 +1,24 @@
-<div class="col-md-6 offset-md-3">
-    <h3> Add Teacher </h3>
-    <form #addForm="ngForm" (ngSubmit) = "onAddTeacher(addForm)">
-    
-        <div class="form-group">
-            <label> Name</label>
-            <input type="text" class ="form-control" id = "name"
-                ngModel name = "name">
-        </div>
-    
-        <div class="form-group">
-            <label> Subject Name</label>
-            <input type="text" class ="form-control" id = "subject"
-                ngModel name = "subject">
-        </div>
-    
-        <button class = "btn btn-success" type ="submit">Submit</button>
-    
+<div class="container">
+  <div class="col-md-6 offset-md-3 mt-3">
+    <h3>Add Teacher details</h3>
+    <form #addForm="ngForm" (ngSubmit)="onAddTeacher(addForm)">
+      <div class="form-group">
+        <label> Name</label>
+        <input type="text" class="form-control" id="name" ngModel name="name" />
+      </div>
+
+      <div class="form-group">
+        <label> Subject Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="subject"
+          ngModel
+          name="subject"
+        />
+      </div>
+
+      <button class="btn btn-success" type="submit">Submit</button>
     </form>
-</div> 
+  </div>
+</div>

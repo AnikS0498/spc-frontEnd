@@ -34,7 +34,6 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 
 const appRoutes: Routes = [
   { path: 'login/admin', component: LoginPageComponent },
-  // { path: '', component: HomeComponent },
   { path: 'login/teacher', component: LoginPageComponent },
   { path: 'login/parent', component: LoginPageComponent },
   { path: 'login/accountant', component: LoginPageComponent },
