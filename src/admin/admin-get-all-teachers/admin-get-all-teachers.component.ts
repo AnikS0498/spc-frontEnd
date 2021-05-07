@@ -32,7 +32,11 @@ export class AdminGetAllTeachersComponent implements OnInit {
     this.router.navigate(['/admin']);
   }
 
-  onClick(){
+  onClickAdd(){
     this.router.navigate(['/admin/teacher/add'])
+  }
+
+  onClickUpdate(){
+    this.router.navigate(['/admin/teacher/update'])
   }
 }

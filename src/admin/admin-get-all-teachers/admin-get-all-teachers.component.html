@@ -4,7 +4,7 @@
         <div class="container" id="main-container">
             <div class="row">
                 <div *ngFor="let teacher of teachers" class="col-md-6 col-xl-3">
-                    <div *ngIf="teacher.name" class="card m-b-30">
+                    <div class="card m-b-30">
                         <div class="card-body row">
                             <div class="col-6">
                                 <img src="http://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-12/256/blond-haired-man.png"
@@ -18,18 +18,23 @@
                             <li class="list-group-item"><i class="fa fa-book float-right"></i>Subject :
                                 {{teacher.subject}}
                             </li>
-                            <li class="list-group-item" *ngIf="teacher.standard.grade"><i
+                            <!-- <li class="list-group-item" *ngIf="teacher.standard.grade"><i
                                     class="fa fa-book-reader float-right"></i>Class Teacher : {{teacher.standard.grade}}
-                            </li>
+                            </li> -->
                         </ul>
                     </div>
                     <br>
                 </div>
                 <div >
-                    <a class="nav-link" (click)="onClick()">
+                    <a class="nav-link" (click)="onClickAdd()">
                     <img src="https://www.pngkey.com/png/full/26-269900_image-black-and-white-stock-add-clip-art.png"
                     width="150" height="150">
                     </a>
+                </div>
+                <div>
+                    <button (click)="onClickUpdate()">
+                        Update
+                    </button>
                 </div>
             </div>
             
