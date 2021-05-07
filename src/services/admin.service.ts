@@ -37,11 +37,15 @@ export class AdminService {
   }
 
   addTeacherDetails(teacher:ITeacher):Observable<ITeacher>{
-    return this.http.post<ITeacher>(`${this.apiServerUrl}admin/teacher/add`,[teacher]);
+    return this.http.post<ITeacher>(`${this.apiServerUrl}admin/teacher/add`,teacher);
   }
 
   updateTeacherDetails(teacher:ITeacher,sIdList:number[],sId:number):Observable<ITeacher>{
-    return this.http.put<ITeacher>(`${this.apiServerUrl}admin/teacher/update`,[teacher,sIdList,sId]);
+    return this.http.put<ITeacher>(`${this.apiServerUrl}admin/teacher/update`,{
+      teacher,
+      sIdList,
+      sId,
+    });
   }
 
   getAllTeacher():Observable<ITeacher[]>{

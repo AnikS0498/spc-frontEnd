@@ -1,45 +1,38 @@
-<!-- <h3>Update Teacher</h3>
-<div class="row">
-    <div class="col-sm-4"></div>
-    <div class="col-sm-4">
-        <div [hidden]="submitted" style="width: 400px;">
-            <form [formGroup]="teacherupdateform" #updateteacher (ngSubmit)="updateTeacher(updateteacher)">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" class="form-control" formControlName="teacher_name" data-toggle="tooltip"
-                        data-placement="right" title="Enter Teacher Name">
-                    <div class="alert alert-danger" *ngIf="(TeacherName.touched) && (TeacherName.invalid)"
-                        style="margin-top: 5px;">
-                        <span *ngIf="TeacherName.errors.required">Teacher Name is Required</span>
-                        <span *ngIf="TeacherName.errors.minlength">
-                            MinLength Error
-                        </span>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="name">Subject</label>
-                    <input type="text" class="form-control" formControlName="teacher_subject" data-toggle="tooltip"
-                        data-placement="right" title="Enter Subject">
-                    <div class="alert alert-danger" *ngIf="(TeacherSubject.touched) && (TeacherSubject.invalid)"
-                        style="margin-top: 5px;">
-                        <span *ngIf="TeacherSubject.errors.required">Teacher Subject is Required</span>
-                    </div>
-                </div>
-
-                <button type="submit" class="btn btn-success">Submit</button>
-            </form>
+<div class="col-md-6 offset-md-3">
+    <h3> Add Teacher </h3>
+    <form (ngSubmit) = "onUpdateTeacher()">
+        <div class="form-group">
+            <label> Id </label>
+            <input type="text" class ="form-control" id = "id"
+                [(ngModel)]='teacher.id' name = "id">
         </div>
-    </div>
-    <div class="col-sm-4"></div>
-</div>
-<div class="row">
-    <div class="col-sm-4"></div>
-    <div class="col-sm-4">
-        <div [hidden]="!submitted">
-            <h4>Student Added SuccessFully!</h4>
-            <button (click)="addStudentForm()" class='btn btn-primary'>Add More Student</button>
+    
+        <div class="form-group">
+            <label> Name </label>
+            <input type="text" class ="form-control" id = "name"
+                [(ngModel)]='teacher.name' name = "name">
         </div>
-    </div>
-    <div class="col-sm-4"></div>
-</div> -->
+    
+        <div class="form-group">
+            <label> Subject Name </label>
+            <input type="text" class ="form-control" id = "subject"
+                [(ngModel)]='teacher.subject' name = "subject">
+        </div>
+
+        <div class="form-group">
+            <label> Standard Id List </label>
+            <input type="text" class ="form-control" id = "standardList"
+                [(ngModel)]='sIdList[0]' name = "standardList">
+        </div>
+
+        <div class="form-group">
+            <label> Standard Id </label>
+            <input type="text" class ="form-control" id = "standard"
+                [(ngModel)]='sId' name = "standard">
+        </div>
+
+    
+        <button class = "btn btn-success" type ="submit">Submit</button>
+    
+    </form>
+</div> 

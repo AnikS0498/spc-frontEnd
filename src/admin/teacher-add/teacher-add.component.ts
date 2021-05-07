@@ -10,15 +10,17 @@ import { AdminService } from 'src/services/admin.service';
 })
 export class TeacherAddComponent implements OnInit {
 
-  teacher!: ITeacher;
+  teacher: ITeacher = new ITeacher();
+  sIdList:number[];
+  sId:number;
   constructor(private adminService:AdminService) { }
 
   ngOnInit(): void {
   }
 
-  onAddTeacher(addForm:NgForm ):void{
-    this.adminService.addTeacherDetails(addForm.value).subscribe();
-    console.log(addForm.value);
+  onAddTeacher():void{
+    this.adminService.addTeacherDetails(this.teacher).subscribe();
+    console.log(this.teacher);
     alert("Teacher Added Successfully");
   }
 

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ITeacher } from 'src/models/teacher';
+import { AdminService } from 'src/services/admin.service';
 
 @Component({
   selector: 'app-teacher-update',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TeacherUpdateComponent implements OnInit {
 
-  constructor() { }
+  teacher: ITeacher = new ITeacher();
+  sIdList:number[];
+  sId:number;
+  constructor(private adminService:AdminService) { }
 
   ngOnInit(): void {
   }
 
+  onUpdateTeacher(){
+    this.adminService.updateTeacherDetails(this.teacher,this.sIdList,this.sId).subscribe();
+    console.log(this.teacher);
+  }
 }
