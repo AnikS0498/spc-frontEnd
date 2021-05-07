@@ -118,12 +118,12 @@ img {
 .carousel-control-next-icon:after
 {
   content: '>';
-  font-size: 55px;
+  font-size: 40px;
   color: black;
 }
 
 .carousel-control-prev-icon:after {
   content: '<';
-  font-size: 55px;
+  font-size: 40px;
   color: black;
 }
