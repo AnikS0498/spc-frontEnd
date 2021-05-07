@@ -8,6 +8,11 @@ body {
   color: #5a5a5a;
 }
 
+/*maintaining aspect ratio of image in carousel*/
+
+img {
+  object-fit: contain;
+}
 
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
@@ -41,7 +46,6 @@ body {
   border-radius: 100%;
 }
 
-
 /* MARKETING CONTENT
 -------------------------------------------------- */
 
@@ -54,10 +58,9 @@ body {
   font-weight: 400;
 }
 .marketing .col-lg-4 p {
-  margin-right: .75rem;
-  margin-left: .75rem;
+  margin-right: 0.75rem;
+  margin-left: 0.75rem;
 }
-
 
 /* Featurettes
 ------------------------- */
@@ -70,9 +73,14 @@ body {
 .featurette-heading {
   font-weight: 300;
   line-height: 1;
-  letter-spacing: -.05rem;
+  letter-spacing: -0.05rem;
 }
 
+/*featurette content*/
+
+.featurette p {
+  font-size: 2.5rem;
+}
 
 /* RESPONSIVE CSS
 -------------------------------------------------- */
@@ -94,4 +102,28 @@ body {
   .featurette-heading {
     margin-top: 7rem;
   }
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  height: 100px;
+  width: 100px;
+  outline: black;
+  background-size: 100%, 100%;
+  border-radius: 50%;
+  /* border: 1px solid black; */
+  background-image: none;
+}
+
+.carousel-control-next-icon:after
+{
+  content: '>';
+  font-size: 55px;
+  color: black;
+}
+
+.carousel-control-prev-icon:after {
+  content: '<';
+  font-size: 55px;
+  color: black;
 }
