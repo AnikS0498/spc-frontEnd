@@ -10,15 +10,16 @@ import { AdminService } from 'src/services/admin.service';
 export class TeacherUpdateComponent implements OnInit {
 
   teacher: ITeacher = new ITeacher();
-  sIdList:number[];
-  sId:number;
+  sIdList:number[]=[116,117];
+  standardList:string=this.sIdList.toString();
+  sId:string;
   constructor(private adminService:AdminService) { }
 
   ngOnInit(): void {
   }
 
   onUpdateTeacher(){
-    this.adminService.updateTeacherDetails(this.teacher,this.sIdList,this.sId).subscribe();
+    this.adminService.updateTeacherDetails(this.teacher,this.standardList,this.sId).subscribe();
     console.log(this.teacher);
   }
 }
