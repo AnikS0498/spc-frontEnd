@@ -11,6 +11,7 @@ import { AdminService } from 'src/services/admin.service';
 export class AdminGetAllTeachersComponent implements OnInit {
 
   public teachers: ITeacher[]=[];
+
   constructor(private adminService:AdminService,
               private router:Router) { }
 
@@ -31,4 +32,7 @@ export class AdminGetAllTeachersComponent implements OnInit {
     this.router.navigate(['/admin']);
   }
 
+  onClick(){
+    this.router.navigate(['/admin/teacher/add'])
+  }
 }

@@ -1,9 +1,9 @@
 <body style="background-color: rgb(154, 177, 202)">
-    <div class="design">
+    <div class="design" >
         <br>
         <div class="container" id="main-container">
             <div class="row">
-                <div *ngFor="let teacher of teachers"  class="col-md-6 col-xl-3">
+                <div *ngFor="let teacher of teachers" class="col-md-6 col-xl-3">
                     <div *ngIf="teacher.name" class="card m-b-30">
                         <div class="card-body row">
                             <div class="col-6">
@@ -23,13 +23,16 @@
                             </li>
                         </ul>
                     </div>
-                    <div *ngIf="">
-                        <img src="https://www.pngkey.com/png/full/26-269900_image-black-and-white-stock-add-clip-art.png"
-                        width="150" height="150">
-                    </div>
                     <br>
                 </div>
+                <div >
+                    <a class="nav-link" (click)="onClick()">
+                    <img src="https://www.pngkey.com/png/full/26-269900_image-black-and-white-stock-add-clip-art.png"
+                    width="150" height="150">
+                    </a>
+                </div>
             </div>
+            
             <button class='btn btn-outline-secondary' style='width:80px' (click)='onBack()'>
                 <i class='fa fa-chevron-left'></i> Back
             </button>
