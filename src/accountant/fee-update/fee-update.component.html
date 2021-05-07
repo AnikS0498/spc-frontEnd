@@ -1,0 +1,36 @@
+<div class="container col-md-6 offset-md-3">
+    <br>
+    <h3> Add Fee </h3>
+    <form (ngSubmit) = "onSubmit()">
+
+        <div class="form-group">
+            <label> Fee Id</label>
+            <input type="text" class ="form-control" id = "id"
+                [(ngModel)] = "fee.id" name = "id">
+        </div>
+    
+        <div class="form-group">
+            <label> Fee Paid</label>
+            <input type="text" class ="form-control" id = "feePaid"
+                [(ngModel)] = "fee.feePaid" name = "feePaid">
+        </div>
+    
+        <div class="form-group">
+            <label> Fee Due</label>
+            <input type="text" class ="form-control" id = "feeDue"
+                [(ngModel)] = "fee.feeDue" name = "feeDue">
+        </div>
+    
+        <div class="form-group">
+            <label> Student Id</label>
+            <input type="text" class ="form-control" id = "id"
+                [(ngModel)] = "fee.student.id" name = "id">
+        </div>
+    
+        <div class="row">
+            <div class="col"> <button class="btn btn-success" type="submit">Submit</button></div>
+
+            <div class="col"><button class="btn btn-success float-right" (click)='onClickAccountant()'>Back</button></div>
+        </div>
+    </form>
+</div>
