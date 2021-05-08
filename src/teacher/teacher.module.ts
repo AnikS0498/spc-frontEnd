@@ -12,6 +12,7 @@ import { DailyDiaryAddComponent } from './dialyDiary-add/daily-diary-add.compone
 import { DailyDiaryUpdateComponent } from './dialyDiary-update/daily-diary-update.component';
 import { ConcernUpdateComponent } from './concern-update/concern-update.component';
 import { FormsModule } from '@angular/forms';
+import { TeacherDashboardComponent } from 'src/app/teacher-dashboard/teacher-dashboard.component';
 
 
 
@@ -32,7 +33,7 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     FormsModule,
     RouterModule.forChild([
-      { path:'teacher', component: TeacherComponent },
+      // { path:'teacher/dashboard', component:  TeacherDashboardComponent},
       {path:'teacher/addExam', component:ExamAddComponent},
       {path:'teacher/updateExam', component:ExamUpdateComponent},
       {path:'teacher/addAttendance', component:AttendanceAddComponent},
