@@ -31,6 +31,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { ParentDashboardComponent } from './parent-dashboard/parent-dashboard.component';
 import { AuthGuard } from 'src/services/auth.guard';
+import { TeacherDashboardComponent } from './teacher-dashboard/teacher-dashboard.component';
 
 
 
@@ -47,6 +48,7 @@ const appRoutes: Routes = [
   { path: 'forgot-password', component: ForgotPasswordComponent },
   { path: 'admin/dashboard', component: AdminDashboardComponent },
   { path: 'parent/dashboard', component: ParentDashboardComponent },
+  { path: 'teacher/dashboard', component: TeacherDashboardComponent },
   { path: 'admin/dashboard', component: AdminDashboardComponent ,pathMatch:'full',canActivate:[AuthGuard]}
 ];
 
@@ -67,7 +69,8 @@ const appRoutes: Routes = [
     RegisterComponent,
     ForgotPasswordComponent,
     AdminDashboardComponent,
-    ParentDashboardComponent
+    ParentDashboardComponent,
+    TeacherDashboardComponent
   ],
   imports: [
     BrowserModule,
