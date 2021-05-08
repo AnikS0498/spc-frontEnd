@@ -19,6 +19,9 @@
               <a [routerLink]="'/admin/teacher/add'">Add Teacher</a>
             </li>
             <li>
+              <a [routerLink]="'/admin/teacher/update'">Update Teacher</a>
+            </li>
+            <li>
               <a [routerLink]="'/admin/getAllTeachers'">Get Teachers</a>
             </li>
           </ul>
@@ -33,10 +36,13 @@
           >
           <ul class="collapse list-unstyled" id="parentSubMenu">
             <li>
-              <a [routerLink]="'/admin/parent/add'">Add parents</a>
+              <a [routerLink]="'/admin/parent/add'">Add parent</a>
             </li>
             <li>
-              <a [routerLink]="'/admin/parent/getAllParents'">Get parents</a>
+              <a [routerLink]="'/admin/parent/update'">Update parent</a>
+            </li>
+            <li>
+              <a [routerLink]="'/admin/getAllParents'">Get parents</a>
             </li>
           </ul>
         </li>
@@ -53,7 +59,7 @@
               <a [routerLink]="'/admin/student/add'">Add student</a>
             </li>
             <li>
-              <a [routerLink]="'/admin/student/getAllStudents'">Get student</a>
+              <a [routerLink]="'/admin/student/getAllStudents'">Get students</a>
             </li>
           </ul>
         </li>
@@ -118,7 +124,7 @@
               <div class="card-footer d-flex">
                 View Details
                 <span class="ml-auto">
-                    <a [routerLink]="'/admin/parent/getAllParents'"><i class="fad fa-arrow-right"></i></a>
+                    <a [routerLink]="'/admin/getAllParents'"><i class="fad fa-arrow-right"></i></a>
                 </span>
               </div>
             </div>
