@@ -13,11 +13,15 @@ import { ITeacher } from 'src/models/teacher';
 export class AdminService {
 
   private apiServerUrl = environment.baseUrl;
+
+  token=localStorage.getItem('token');
+  headers_object=new HttpHeaders().set("Authorization", "Bearer " +this.token);
   
   constructor(private http: HttpClient) { }
 
   addParentDetails(parent:IParent):Observable<IParent>{
-    return this.http.post<IParent>(`${this.apiServerUrl}admin/parent/add`,[parent]);
+    return this.http.post<IParent>(`${this.apiServerUrl}admin/parent/add`,parent,
+    {headers:this.headers_object});
   }
 
   updateParentDetails(parent:IParent,sId:string):Observable<IParent>{
@@ -25,17 +29,14 @@ export class AdminService {
   }
 
   getAllParent():Observable<IParent[]>{
-    let token=localStorage.getItem('token');
-    console.log(token);
-    let headers_object=new HttpHeaders({
-      Authorization: "Bearer "+token
-    })
+    
     return this.http.get<IParent[]>(`${this.apiServerUrl}admin/parent/getParents`,
-    {headers:headers_object});
+    {headers:this.headers_object});
   }
   
   addStudentDetails(student:IStudent):Observable<IStudent>{
-    return this.http.post<IStudent>(`${this.apiServerUrl}admin/student/add`,[student]);
+    return this.http.post<IStudent>(`${this.apiServerUrl}admin/student/add`,student,
+    {headers:this.headers_object});
   }
 
   updateStudentDetails(student:IStudent):Observable<IStudent>{
@@ -54,7 +55,8 @@ export class AdminService {
   }
 
   getAllTeacher():Observable<ITeacher[]>{
-    return this.http.get<ITeacher[]>(`${this.apiServerUrl}admin/teacher/getTeachers`);
+    return this.http.get<ITeacher[]>(`${this.apiServerUrl}admin/teacher/getTeachers`,
+    {headers:this.headers_object});
   }
 
   addStandardDetails(standard:IStandard):Observable<IStandard>{
