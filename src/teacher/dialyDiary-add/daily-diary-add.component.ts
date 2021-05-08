@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { IDiary } from 'src/models/diary';
-import { IStudent } from 'src/models/student';
 import { TeacherService } from 'src/services/teacher.service';
 
 @Component({
@@ -10,19 +10,28 @@ import { TeacherService } from 'src/services/teacher.service';
 })
 export class DailyDiaryAddComponent implements OnInit {
 
-  public diary!: IDiary;
-  public student!: IStudent;
+  diary: IDiary = new IDiary;
+  sId: string;
 
-  constructor(private teacherService: TeacherService) { }
+  constructor(private teacherService: TeacherService,
+              private router: Router) { }
 
   ngOnInit(): void {
   }
 
   public addDiary() {
-    this.teacherService.addDailyDiaryDetails(this.diary, this.student.id).subscribe(() => {
+    this.teacherService.addDailyDiaryDetails(this.diary, this.sId).subscribe(() => {
       alert("Added Diary Successfully");
     })
 
   }
+
+  onClickTeacher(){
+    this.router.navigate(['teacher']);
+  }
+
+  onSubmit(){
+       this.addDiary();
+   }
 
 }

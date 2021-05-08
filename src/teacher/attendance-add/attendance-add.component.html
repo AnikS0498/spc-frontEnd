@@ -1,1 +1,27 @@
-<p>attendance-add works!</p>
+<div class="container col-md-6 offset-md-3">
+    <br>
+    <h3> Add Attendance </h3>
+    <form (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+            <label> Student Id</label>
+            <input type="text" class="form-control" id="Student" [(ngModel)]="sId" name="Student">
+        </div>
+
+        <div class="form-group">
+            <label> Attendance Date</label>
+            <input type="text" class="form-control" id="attendanceDate" [(ngModel)]="attendance.attendanceDate" name="attendanceDate">
+        </div>
+
+        <div class="form-group">
+            <label> Student Id</label>
+            <input type="text" class="form-control" id="present" [(ngModel)]="attendance.present" name="present">
+        </div>
+
+        <div class="row">
+            <div class="col"> <button class="btn btn-success" type="submit">Submit</button></div>
+
+            <div class="col"><button class="btn btn-success float-right" (click)='onClickTeacher()'>Back</button></div>
+        </div>
+    </form>
+</div>

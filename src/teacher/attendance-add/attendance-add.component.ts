@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { IAttendance } from 'src/models/attendance';
-import { IStudent } from 'src/models/student';
 import { TeacherService } from 'src/services/teacher.service';
 
 @Component({
@@ -10,18 +10,27 @@ import { TeacherService } from 'src/services/teacher.service';
 })
 export class AttendanceAddComponent implements OnInit {
 
-  public attendance!: IAttendance;
-  student: number;
+  attendance: IAttendance = new IAttendance;
+  sId: string;
 
-  constructor(private teacherService: TeacherService) { }
+  constructor(private teacherService: TeacherService,
+              private router: Router) { }
 
   ngOnInit(): void {
   }
 
   public addAttendance(){
-    this.teacherService.addAttendanceDetails(this.attendance,this.student.id).subscribe(()=>{
+    this.teacherService.addAttendanceDetails(this.attendance,this.sId).subscribe(()=>{
       alert("Added Attendance Successfully");
       })
-  }
+    }
+
+    onClickTeacher(){
+      this.router.navigate(['teacher']);
+    }
+  
+    onSubmit(){
+         this.addAttendance();
+     }
 
 }

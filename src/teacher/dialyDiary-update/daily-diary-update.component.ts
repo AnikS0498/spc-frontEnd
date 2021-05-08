@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { IDiary } from 'src/models/diary';
-import { IStudent } from 'src/models/student';
 import { TeacherService } from 'src/services/teacher.service';
 
 @Component({
@@ -10,20 +10,29 @@ import { TeacherService } from 'src/services/teacher.service';
 })
 export class DailyDiaryUpdateComponent implements OnInit {
 
-  public diary!: IDiary;
-  public student!: IStudent; 
+  diary: IDiary = new IDiary;
+  sId: string
 
-  constructor(private teacherService: TeacherService) { }
+  constructor(private teacherService: TeacherService,
+              private router: Router) { }
 
   ngOnInit(): void {
   }
 
   public updateDiary() {
-    this.teacherService.updateDailyDiaryDetails(this.diary, this.student.id).subscribe(() => {
+    this.teacherService.updateDailyDiaryDetails(this.diary, this.sId).subscribe(() => {
       alert("Updated Diary Successfully");
     })
 
   }
+
+  onClickTeacher(){
+    this.router.navigate(['teacher']);
+  }
+
+  onSubmit(){
+       this.updateDiary();
+   }
 
 
 }

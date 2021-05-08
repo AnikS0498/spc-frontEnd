@@ -11,6 +11,7 @@ import { AttendanceUpdateComponent } from './attendance-update/attendance-update
 import { DailyDiaryAddComponent } from './dialyDiary-add/daily-diary-add.component';
 import { DailyDiaryUpdateComponent } from './dialyDiary-update/daily-diary-update.component';
 import { ConcernUpdateComponent } from './concern-update/concern-update.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -29,13 +30,15 @@ import { ConcernUpdateComponent } from './concern-update/concern-update.componen
   ],
   imports: [
     CommonModule,
+    FormsModule,
     RouterModule.forChild([
+      { path:'teacher', component: TeacherComponent },
       {path:'teacher/addExam', component:ExamAddComponent},
       {path:'teacher/updateExam', component:ExamUpdateComponent},
       {path:'teacher/addAttendance', component:AttendanceAddComponent},
       {path:'teacher/updateAttendance', component:AttendanceUpdateComponent},
-      {path:'teacher/addDailyDairy', component:DailyDiaryAddComponent},
-      {path:'teacher/updateDailyDairy', component:DailyDiaryUpdateComponent},
+      {path:'teacher/addDailyDiary', component:DailyDiaryAddComponent},
+      {path:'teacher/updateDailyDiary', component:DailyDiaryUpdateComponent},
       {path:'teacher/updateConcern', component:ConcernUpdateComponent},
       {path:'teacher/addReportCard', component:ReportCardAddComponent},
       {path:'teacher/updateReportCard', component:ReportCardUpdateComponent},

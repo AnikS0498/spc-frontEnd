@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { IReportCard } from 'src/models/reportCard';
-import { IStudent } from 'src/models/student';
 import { TeacherService } from 'src/services/teacher.service';
 
 @Component({
@@ -10,18 +10,28 @@ import { TeacherService } from 'src/services/teacher.service';
 })
 export class ReportCardAddComponent implements OnInit {
 
-  public reportCard!: IReportCard;
-  public student!: IStudent;
+  reportCard: IReportCard = new IReportCard;
+  sId: string;
 
-  constructor(private teacherService:TeacherService) { }
+  constructor(private teacherService:TeacherService,
+              private router: Router) { }
 
   ngOnInit(): void {
   }
 
   public addReportCard(){
-    this.teacherService.addReportCardDetails(this.reportCard,this.student.id).subscribe(() => {
+    this.teacherService.addReportCardDetails(this.reportCard,this.sId).subscribe(() => {
       alert("Added ReportCard Successfully")
     })
   }
+
+  onClickTeacher(){
+    this.router.navigate(['teacher']);
+  }
+
+  onSubmit(){
+       this.addReportCard();
+   }
+
 
 }

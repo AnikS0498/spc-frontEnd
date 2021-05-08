@@ -1,1 +1,37 @@
-<p>exam-update works!</p>
+<div class="container col-md-6 offset-md-3">
+    <br>
+    <h3> Update Exam </h3>
+    <form (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+            <label> Exam Id</label>
+            <input type="text" class="form-control" id="exam" [(ngModel)]="exam.id" name="exam">
+        </div>
+
+        <div class="form-group">
+            <label> Exam Date</label>
+            <input type="text" class="form-control" id="examDate" [(ngModel)]="exam.examDate" name="examDate">
+        </div>
+
+        <div class="form-group">
+            <label> Exam Subject</label>
+            <input type="text" class="form-control" id="subject" [(ngModel)]="exam.subject" name="subject">
+        </div>
+
+        <div class="form-group">
+            <label> Exam Duration</label>
+            <input type="text" class="form-control" id="duration" [(ngModel)]="exam.duration" name="duration">
+        </div>
+
+        <div class="form-group">
+            <label> Exam Marks</label>
+            <input type="text" class="form-control" id="marks" [(ngModel)]="exam.marks" name="marks">
+        </div>
+
+        <div class="row">
+            <div class="col"> <button class="btn btn-success" type="submit">Submit</button></div>
+
+            <div class="col"><button class="btn btn-success float-right" (click)='onClickTeacher()'>Back</button></div>
+        </div>
+    </form>
+</div>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { IConcern } from 'src/models/concern';
-import { IParent } from 'src/models/parent';
 import { TeacherService } from 'src/services/teacher.service';
 
 @Component({
@@ -10,20 +10,29 @@ import { TeacherService } from 'src/services/teacher.service';
 })
 export class ConcernUpdateComponent implements OnInit {
 
-  public concern!: IConcern;
-  public parent!: IParent;
+  concern: IConcern = new IConcern;
+  pId: string;
 
-  constructor(private teacherService: TeacherService) { }
+  constructor(private teacherService: TeacherService,
+              private router: Router) { }
 
   ngOnInit(): void {
   }
 
   public updateConcern() {
-    this.teacherService.updateCocernDetails(this.concern, this.parent.id).subscribe(() => {
+    this.teacherService.updateConcernDetails(this.concern, this.pId).subscribe(() => {
       alert("Updated Concern Successfully");
     })
 
   }
+
+  onClickTeacher(){
+    this.router.navigate(['teacher']);
+  }
+
+  onSubmit(){
+       this.updateConcern();
+   }
 
 }
 

@@ -12,7 +12,7 @@ import { AccountantService } from 'src/services/accountant.service';
 export class FeeAddComponent implements OnInit {
 
   public fee!: IFee;
-  public student!: IStudent;
+  student: string;
   constructor(private accountantService : AccountantService,
               private router: Router) { }
 
@@ -21,7 +21,7 @@ export class FeeAddComponent implements OnInit {
  
 
   public addFee(){
-    this.accountantService.addFeeDetails(this.fee, this.student.id).subscribe(()=>{
+    this.accountantService.addFeeDetails(this.fee, this.student).subscribe(()=>{
     alert("Added Fee Successfully");
     })
 

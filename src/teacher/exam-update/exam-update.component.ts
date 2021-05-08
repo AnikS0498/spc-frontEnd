@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { IExam } from 'src/models/exam';
-import { IStandard } from 'src/models/standard';
 import { TeacherService } from 'src/services/teacher.service';
 
 @Component({
@@ -10,19 +10,29 @@ import { TeacherService } from 'src/services/teacher.service';
 })
 export class ExamUpdateComponent implements OnInit {
   
-  public exam!: IExam;
+  exam: IExam = new IExam;
   public standards:number[]=[116,117];
   sIdList: string = this.standards.toString();
 
-  constructor(private teacherService: TeacherService) { }
+  constructor(private teacherService: TeacherService,
+              private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  public addExam(){
+  public updateExam(){
     this.teacherService.updateExamDetails(this.exam,this.sIdList).subscribe(()=>{
     alert("Exam updated successfully");
     });
   }
+
+  onClickTeacher(){
+    this.router.navigate(['teacher']);
+  }
+
+  onSubmit(){
+       this.updateExam();
+   }
+
 
 }

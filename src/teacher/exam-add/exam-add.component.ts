@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { IExam } from 'src/models/exam';
-import { IStandard } from 'src/models/standard';
 import { TeacherService } from 'src/services/teacher.service';
 
 @Component({
@@ -10,11 +10,12 @@ import { TeacherService } from 'src/services/teacher.service';
 })
 export class ExamAddComponent implements OnInit {
 
-  public exam!: IExam;
-  public standards:number[]=[116,117];
+  exam: IExam = new IExam;
+  standards:number[]=[116,117];
   sIdList: string = this.standards.toString();
 
-  constructor(private teacherService: TeacherService) { }
+  constructor(private teacherService: TeacherService,
+              private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -24,5 +25,13 @@ export class ExamAddComponent implements OnInit {
     alert("Exam added successfully");
     });
   }
+
+  onClickTeacher(){
+    this.router.navigate(['teacher']);
+  }
+
+  onSubmit(){
+       this.addExam();
+   }
 
 }
