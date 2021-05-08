@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
@@ -40,12 +40,14 @@ export class AdminService {
     return this.http.post<ITeacher>(`${this.apiServerUrl}admin/teacher/add`,teacher);
   }
 
-  updateTeacherDetails(teacher:ITeacher,sIdList:number[],sId:number):Observable<ITeacher>{
-    return this.http.put<ITeacher>(`${this.apiServerUrl}admin/teacher/update`,{
-      teacher,
-      sIdList,
-      sId,
-    });
+  updateTeacherDetails(teacher:ITeacher,sIdList:string,sId:string):Observable<ITeacher>{
+    let param=new HttpParams().set('standardIdList',sIdList).set('standardId',sId);
+  
+    return this.http.put<ITeacher>(`${this.apiServerUrl}admin/teacher/update`,teacher,
+    {params:param});
+    // public ResponseEntity<Teacher> updateTeacherDetails(@RequestBody Teacher teacher,
+		// 	@RequestParam List<Integer> standardIdList, @RequestParam int standardId)
+ 
   }
 
   getAllTeacher():Observable<ITeacher[]>{

@@ -22,6 +22,7 @@ export class TeacherAddComponent implements OnInit {
     this.adminService.addTeacherDetails(this.teacher).subscribe();
     console.log(this.teacher);
     alert("Teacher Added Successfully");
+    location.reload();
   }
 
   goToTeacherList(){
