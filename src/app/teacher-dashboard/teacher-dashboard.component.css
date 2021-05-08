@@ -10,10 +10,12 @@
     flex-wrap: wrap;
     justify-content: space-between;
 }
+
 .container .box{
     position: relative;
     width: 350px;
     padding: 40px;
+    /* padding-bottom: 10px; */
     background: #fff;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     border-radius: 4%;
@@ -22,6 +24,15 @@
     overflow: hidden;
     text-align: center;
 }
+
+.exam{
+    padding-left: 150px;
+}
+
+.report-card{
+    padding-right: 150px;
+}
+
 .container .box .icon{
     position: relative;
     width: 80px;
@@ -68,22 +79,22 @@
     background: #2196f3;
 }
 
-.container .box:nth-child(4) .icon{
+.container .exam .box:nth-child(1) .icon{
     box-shadow: 0 0 0 0 #21f3c6;
     background: #21f3c6;
 }
 
-.container .box:nth-child(4):hover .icon{
+.container .exam .box:nth-child(1):hover .icon{
     box-shadow: 0 0 0 400px #21f3c6;
     background: #21f3c6;
 }
 
-.container .box:nth-child(5) .icon{
+.container .report-card .box:nth-child(1) .icon{
     box-shadow: 0 0 0 0 #f33a21;
     background: #f32f21;
 }
 
-.container .box:nth-child(5):hover .icon{
+.container .report-card .box:nth-child(1):hover .icon{
     box-shadow: 0 0 0 400px #f34b21;
     background: #f34121;
 }
@@ -135,6 +146,3 @@ a{
     pointer-events: none;
 }
 
-.container .box #exam{
-    width: 30%;
-}
