@@ -46,7 +46,7 @@ const appRoutes: Routes = [
   { path: 'admin/register', component: RegisterComponent },
   { path: 'forgot-password', component: ForgotPasswordComponent },
   { path: 'admin/dashboard', component: AdminDashboardComponent },
-  { path: 'parent/dashboard', component: ParentDashboardComponent }
+  { path: 'parent/dashboard', component: ParentDashboardComponent },
   { path: 'admin/dashboard', component: AdminDashboardComponent ,pathMatch:'full',canActivate:[AuthGuard]}
 ];
 
