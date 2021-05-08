@@ -1,11 +1,9 @@
 .card-container{
-    /* margin: 0; */
-    padding: 0;
+    padding: 3%;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    /* overflow-x: hidden; */
+    background-color: #a7bbc7;
 }
 .container{
     display: flex;
@@ -18,7 +16,7 @@
     padding: 40px;
     background: #fff;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    border-radius: 4px;
+    border-radius: 4%;
     margin: 10px;
     box-sizing: border-box;
     overflow: hidden;
@@ -71,13 +69,13 @@
 }
 
 .container .box:nth-child(4) .icon{
-    box-shadow: 0 0 0 0 #f3de21;
+    box-shadow: 0 0 0 0 #21f3c6;
     background: #21f3c6;
 }
 
 .container .box:nth-child(4):hover .icon{
-    box-shadow: 0 0 0 400px #bbf321;
-    background: #f3de21;
+    box-shadow: 0 0 0 400px #21f3c6;
+    background: #21f3c6;
 }
 
 .container .box:nth-child(5) .icon{
@@ -135,4 +133,8 @@ a{
     background: rgba(255,255,255, 0.2);
     /* z-index: 2; */
     pointer-events: none;
+}
+
+.container .box #exam{
+    width: 30%;
 }
