@@ -5,12 +5,13 @@
         <div class="img-left d-none d-md-flex"></div>
         <div class="card-body">
           <h4 class="title text-center mt-4 font-weight-bold">Login into account</h4>
-          <form action="" class="form-box px-3">
+          <form class="form-box px-3" (ngSubmit)="onSubmit()">
             <div class="form-input">
               <span> <i class="fas fa-user"></i></span>
               <input
-                type="number"
-                name=""
+                [(ngModel)]="credentials.userId"
+                type="text"
+                name="userid"
                 id=""
                 placeholder="User ID"
                 tabindex="10"
@@ -20,8 +21,9 @@
             <div class="form-input">
               <span> <i class="fa fa-key"></i></span>
               <input
+              [(ngModel)]="credentials.password"
                 type="password"
-                name=""
+                name="passw"
                 id=""
                 placeholder="Password"
                 tabindex="10"
@@ -45,6 +47,9 @@
               <a [routerLink]="'/admin/register'" class="register-link">Register</a>
             </div>
           </form>
+          <br>
+          <p class="mt">{{credentials | json }}</p>
+
         </div>
       </div>
     </div>
