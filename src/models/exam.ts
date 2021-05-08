@@ -1,7 +1,7 @@
 import { IStandard } from "./standard";
 import { subject } from "./subject";
 
-export interface IExam {
+export class IExam {
     id: number;
     examDate: Date;
     subject: subject;
