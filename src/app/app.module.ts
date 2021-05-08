@@ -29,6 +29,9 @@ import { RegisterComponent } from './register/register.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { ParentDashboardComponent } from './parent-dashboard/parent-dashboard.component';
+import { AuthGuard } from 'src/services/auth.guard';
+import { TeacherDashboardComponent } from './teacher-dashboard/teacher-dashboard.component';
 
 
 
@@ -43,7 +46,10 @@ const appRoutes: Routes = [
   { path: 'contactus', component: ContactUsComponent },
   { path: 'admin/register', component: RegisterComponent },
   { path: 'forgot-password', component: ForgotPasswordComponent },
-  { path: 'admin/dashboard', component: AdminDashboardComponent }
+  { path: 'admin/dashboard', component: AdminDashboardComponent },
+  { path: 'parent/dashboard', component: ParentDashboardComponent },
+  { path: 'teacher/dashboard', component: TeacherDashboardComponent },
+  { path: 'admin/dashboard', component: AdminDashboardComponent ,pathMatch:'full',canActivate:[AuthGuard]}
 ];
 
 
@@ -62,7 +68,9 @@ const appRoutes: Routes = [
     ContactUsComponent,
     RegisterComponent,
     ForgotPasswordComponent,
-    AdminDashboardComponent
+    AdminDashboardComponent,
+    ParentDashboardComponent,
+    TeacherDashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -77,7 +85,8 @@ const appRoutes: Routes = [
     MatInputModule,
     FormsModule,
     HttpClientModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
