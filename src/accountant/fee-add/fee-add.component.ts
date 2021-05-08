@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { IFee } from 'src/models/fee';
-import { IStudent } from 'src/models/student';
 import { AccountantService } from 'src/services/accountant.service';
 
 @Component({
@@ -11,7 +10,7 @@ import { AccountantService } from 'src/services/accountant.service';
 })
 export class FeeAddComponent implements OnInit {
 
-  public fee!: IFee;
+  fee: IFee = new IFee;
   student: string;
   constructor(private accountantService : AccountantService,
               private router: Router) { }
