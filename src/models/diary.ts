@@ -1,6 +1,6 @@
 import { IStudent } from "./student";
 
-export interface IDiary {
+export class IDiary {
     id: number;
     student: IStudent;
     generatedDate: Date;
