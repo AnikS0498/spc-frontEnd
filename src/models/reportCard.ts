@@ -1,7 +1,7 @@
 import { IStudent } from "./student";
 import { subject } from "./subject";
 
-export interface IReportCard{
+export class IReportCard{
     id: number;
     student: IStudent;
     isAttempted: boolean;

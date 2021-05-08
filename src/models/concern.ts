@@ -1,10 +1,10 @@
 import { concernType } from "./concernType";
 import { IParent } from "./parent";
 
-export interface IConcern{
+export class IConcern{
     id:number;
     concern:String;
     isResolved:boolean;
-    concerntype:concernType;
+    concernType:concernType;
     parent:IParent;
 }
