@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { IParent } from 'src/models/parent';
 import { AdminService } from 'src/services/admin.service';
 
 @Component({
@@ -11,35 +9,17 @@ import { AdminService } from 'src/services/admin.service';
 })
 export class AdminComponent implements OnInit {
 
+  constructor(private adminService: AdminService,
+    private router: Router) { }
 
-  public parent_obj!: IParent;
+  ngOnInit(): void {
+  }
 
-  constructor(private adminService:AdminService,
-              private router:Router) { }
-
- ngOnInit(): void {
-  } 
-
-  onClickTeacher(){
+  onClickTeacher() {
     this.router.navigate(['admin/getAllTeachers']);
   }
 
-  onClickParent(){
+  onClickParent() {
     this.router.navigate(['admin/getAllParents']);
   }
-
-  public addParent(addForm:NgForm):void{
-    this.adminService.addParentDetails(addForm.value).subscribe({
-      next: parent => {
-        this.parent_obj=parent;
-      }
-    });
-  }
-
-
-  
-
-  
-
-
 }

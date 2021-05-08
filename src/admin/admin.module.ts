@@ -7,6 +7,8 @@ import { AdminGetAllTeachersComponent } from './admin-get-all-teachers/admin-get
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TeacherAddComponent } from './teacher-add/teacher-add.component';
 import { TeacherUpdateComponent } from './teacher-update/teacher-update.component';
+import { ParentUpdateComponent } from './parent-update/parent-update.component';
+import { ParentAddComponent } from './parent-add/parent-add.component';
 
 
 
@@ -16,7 +18,9 @@ import { TeacherUpdateComponent } from './teacher-update/teacher-update.componen
     AdminGetAllParentsComponent,
     AdminGetAllTeachersComponent,
     TeacherAddComponent,
-    TeacherUpdateComponent
+    TeacherUpdateComponent,
+    ParentUpdateComponent,
+    ParentAddComponent
   ],
   imports: [
     CommonModule,

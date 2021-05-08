@@ -1,4 +1,4 @@
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
@@ -13,19 +13,25 @@ import { ITeacher } from 'src/models/teacher';
 export class AdminService {
 
   private apiServerUrl = environment.baseUrl;
-
+  
   constructor(private http: HttpClient) { }
 
   addParentDetails(parent:IParent):Observable<IParent>{
     return this.http.post<IParent>(`${this.apiServerUrl}admin/parent/add`,[parent]);
   }
 
-  updateParentDetails(parent:IParent,sId:number[]):Observable<IParent>{
+  updateParentDetails(parent:IParent,sId:string):Observable<IParent>{
     return this.http.put<IParent>(`${this.apiServerUrl}admin/parent/update`,[parent,sId]);
   }
 
   getAllParent():Observable<IParent[]>{
-    return this.http.get<IParent[]>(`${this.apiServerUrl}admin/parent/getParents`);
+    let token=localStorage.getItem('token');
+    console.log(token);
+    let headers_object=new HttpHeaders({
+      Authorization: "Bearer "+token
+    })
+    return this.http.get<IParent[]>(`${this.apiServerUrl}admin/parent/getParents`,
+    {headers:headers_object});
   }
   
   addStudentDetails(student:IStudent):Observable<IStudent>{
@@ -44,10 +50,7 @@ export class AdminService {
     let param=new HttpParams().set('standardIdList',sIdList).set('standardId',sId);
   
     return this.http.put<ITeacher>(`${this.apiServerUrl}admin/teacher/update`,teacher,
-    {params:param});
-    // public ResponseEntity<Teacher> updateTeacherDetails(@RequestBody Teacher teacher,
-		// 	@RequestParam List<Integer> standardIdList, @RequestParam int standardId)
- 
+    {params:param}); 
   }
 
   getAllTeacher():Observable<ITeacher[]>{

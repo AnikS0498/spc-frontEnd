@@ -25,7 +25,4 @@ export class TeacherAddComponent implements OnInit {
     location.reload();
   }
 
-  goToTeacherList(){
-    
-  }
 }
