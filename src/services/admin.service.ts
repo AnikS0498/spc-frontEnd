@@ -25,7 +25,10 @@ export class AdminService {
   }
 
   updateParentDetails(parent:IParent,sId:string):Observable<IParent>{
-    return this.http.put<IParent>(`${this.apiServerUrl}admin/parent/update`,[parent,sId]);
+    let param=new HttpParams().set('studentIdList',sId);
+    return this.http.put<IParent>(`${this.apiServerUrl}admin/parent/update`,parent,
+    {params:param,
+      headers:this.headers_object});
   }
 
   getAllParent():Observable<IParent[]>{
@@ -40,18 +43,21 @@ export class AdminService {
   }
 
   updateStudentDetails(student:IStudent):Observable<IStudent>{
-    return this.http.put<IStudent>(`${this.apiServerUrl}admin/student/update`,[student]);
+    return this.http.put<IStudent>(`${this.apiServerUrl}admin/student/update`,student,
+    {headers:this.headers_object});
   }
 
   addTeacherDetails(teacher:ITeacher):Observable<ITeacher>{
-    return this.http.post<ITeacher>(`${this.apiServerUrl}admin/teacher/add`,teacher);
+    return this.http.post<ITeacher>(`${this.apiServerUrl}admin/teacher/add`,teacher,
+    {headers:this.headers_object});
   }
 
   updateTeacherDetails(teacher:ITeacher,sIdList:string,sId:string):Observable<ITeacher>{
     let param=new HttpParams().set('standardIdList',sIdList).set('standardId',sId);
   
     return this.http.put<ITeacher>(`${this.apiServerUrl}admin/teacher/update`,teacher,
-    {params:param}); 
+    {params:param,
+    headers:this.headers_object}); 
   }
 
   getAllTeacher():Observable<ITeacher[]>{
@@ -59,11 +65,13 @@ export class AdminService {
     {headers:this.headers_object});
   }
 
-  addStandardDetails(standard:IStandard):Observable<IStandard>{
-    return this.http.post<IStandard>(`${this.apiServerUrl}/admin/standard/add`,[standard]);
-  }
+  // addStandardDetails(standard:IStandard):Observable<IStandard>{
+  //   return this.http.post<IStandard>(`${this.apiServerUrl}/admin/standard/add`,standard,
+  //   {headers:this.headers_object});
+  // }
 
-  updateStandardDetails(standard:IStandard,sIdList:number[]):Observable<IStandard>{
-    return this.http.put<IStandard>(`${this.apiServerUrl}admin/standard/update`,[standard,sIdList]);
-  }
+  // updateStandardDetails(standard:IStandard,sIdList:number[]):Observable<IStandard>{
+  //   return this.http.put<IStandard>(`${this.apiServerUrl}admin/standard/update`,[standard,sIdList],
+  //   {headers:this.headers_object});
+  // }
 }

@@ -9,6 +9,8 @@ import { TeacherAddComponent } from './teacher-add/teacher-add.component';
 import { TeacherUpdateComponent } from './teacher-update/teacher-update.component';
 import { ParentUpdateComponent } from './parent-update/parent-update.component';
 import { ParentAddComponent } from './parent-add/parent-add.component';
+import { StudentAddComponent } from './student-add/student-add.component';
+import { StudentUpdateComponent } from './student-update/student-update.component';
 
 
 
@@ -20,7 +22,9 @@ import { ParentAddComponent } from './parent-add/parent-add.component';
     TeacherAddComponent,
     TeacherUpdateComponent,
     ParentUpdateComponent,
-    ParentAddComponent
+    ParentAddComponent,
+    StudentAddComponent,
+    StudentUpdateComponent,
   ],
   imports: [
     CommonModule,
@@ -31,7 +35,9 @@ import { ParentAddComponent } from './parent-add/parent-add.component';
       { path:'admin/getAllParents', component:AdminGetAllParentsComponent },
       { path:'admin/getAllTeachers', component:AdminGetAllTeachersComponent },
       { path:'admin/teacher/add', component: TeacherAddComponent },
-      { path:'admin/teacher/update', component: TeacherUpdateComponent }
+      { path:'admin/teacher/update', component: TeacherUpdateComponent },
+      { path:'admin/parent/add', component: ParentAddComponent },
+      { path:'admin/parent/update', component: ParentUpdateComponent }
     ])
   ]
 })

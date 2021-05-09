@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
 import { ITeacher } from 'src/models/teacher';
 import { AdminService } from 'src/services/admin.service';
 
@@ -11,8 +10,7 @@ import { AdminService } from 'src/services/admin.service';
 export class TeacherAddComponent implements OnInit {
 
   teacher: ITeacher = new ITeacher();
-  sIdList:number[];
-  sId:number;
+  
   constructor(private adminService:AdminService) { }
 
   ngOnInit(): void {

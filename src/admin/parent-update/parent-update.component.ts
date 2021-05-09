@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { IParent } from 'src/models/parent';
 import { AdminService } from 'src/services/admin.service';
 
@@ -9,22 +9,64 @@ import { AdminService } from 'src/services/admin.service';
   styleUrls: ['./parent-update.component.css']
 })
 export class ParentUpdateComponent implements OnInit {
-  parentForm:FormGroup;
+  
   parent: IParent = new IParent();
+  sId:number[];
   studentId:string;
+  submitted:boolean;
+
+
   constructor(private adminService:AdminService,private fb:FormBuilder) { 
-    this.parentForm = this.fb.group({
-      
-    });
+  }
+  ngOnInit(){
+    this.submitted=false;
   }
 
-  ngOnInit(): void {
+  parentForm = new FormGroup({
+    parent_name:new FormControl('' , [Validators.required, Validators.minLength(5) ] ),
+    parent_contact:new FormControl('',[Validators.required,Validators.maxLength(10)]),
+    students:this.fb.array([]),
+  });
+  
+  saveParent(saveParent){
+    this.parent=new IParent();   
+    this.parent.name=this.ParentName.value;
+    this.parent.contact=this.ParentContact.value;
+    this.sId = this.student_id.value;
+    this.studentId= this.sId.toString();
+    this.submitted = true;
+    this.onUpdateParent();
   }
+
+  get ParentName(){
+    return this.parentForm.get('parent_name');
+  }
+
+  get ParentContact(){
+    return this.parentForm.get('parent_contact');
+  }
+ 
+  getControls() {
+    return (this.parentForm.get('students') as FormArray).controls;
+  }
+  get student_id() : FormArray {
+    return this.parentForm.get("students") as FormArray
+  }
+ 
+  onAddId() {
+    const control = new FormControl(null, Validators.required);
+    (<FormArray>this.parentForm.get('students')).push(control);
+  }
+ 
+  addParentForm(){
+    this.submitted=false;
+    this.parentForm.reset();
+  }
+  
 
   onUpdateParent():void{
     this.adminService.updateParentDetails(this.parent,this.studentId).subscribe();
     console.log(this.parent);
-    alert("Parent Added Successfully");
-    location.reload();
+    this.parent=new IParent();
   }
 }
