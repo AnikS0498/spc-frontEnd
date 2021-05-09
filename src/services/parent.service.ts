@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
@@ -13,6 +13,8 @@ import { IReportCard } from 'src/models/reportCard';
   providedIn: 'root'
 })
 export class ParentService {
+  token=localStorage.getItem('token');
+  headers_object=new HttpHeaders().set("Authorization", "Bearer " +this.token);
 
   private apiServerUrl = environment.baseUrl;
 
@@ -35,7 +37,8 @@ export class ParentService {
   }
 
   getAttendance(sId: number): Observable<IAttendance> {
-    return this.http.get<IAttendance>(`${this.apiServerUrl}/parent/student/attendance/${sId}`);
+    return this.http.get<IAttendance>(`${this.apiServerUrl}parent/student/attendance/${sId}`,
+    {headers:this.headers_object});
   }
 
   addConcern(concern: IConcern, pId: number): Observable<IConcern> {
