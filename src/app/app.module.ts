@@ -32,6 +32,7 @@ import { ParentDashboardComponent } from './parent-dashboard/parent-dashboard.co
 import { AuthGuard } from 'src/services/auth.guard';
 import { TeacherDashboardComponent } from './teacher-dashboard/teacher-dashboard.component';
 import { GalleryComponent } from './gallery/gallery.component';
+import { AccountantDashboardComponent } from './accountant-dashboard/accountant-dashboard.component';
 
 
 
@@ -50,6 +51,7 @@ const appRoutes: Routes = [
   { path: 'parent/dashboard', component: ParentDashboardComponent },
   { path: 'teacher/dashboard', component: TeacherDashboardComponent },
   { path: 'gallery', component: GalleryComponent },
+  { path: 'accountant/dashboard', component: AccountantDashboardComponent },
   { path: 'admin/dashboard', component: AdminDashboardComponent ,pathMatch:'full',canActivate:[AuthGuard]}
 ];
 
@@ -72,7 +74,8 @@ const appRoutes: Routes = [
     AdminDashboardComponent,
     ParentDashboardComponent,
     TeacherDashboardComponent,
-    GalleryComponent
+    GalleryComponent,
+    AccountantDashboardComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,12 @@
+<div class="container-fluid">
+  <div class="container mt-4" id="backButton">
+    <a [routerLink]="'/admin/dashboard'"
+      ><button type="button" class="btn btn-primary">BACK</button></a
+    >
+  </div>
+</div>
+
 <div class="design">
-  <a [routerLink]="'/admin/dashboard'"><button type="button" class="btn btn-primary">BACK</button></a>
   <br />
   <div class="container" id="main-container">
     <div class="row">
@@ -7,8 +14,11 @@
         <div class="card m-b-30">
           <div class="card-body row">
             <div class="col-6">
-              <img src="http://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-12/256/blond-haired-man.png"
-                alt="" class="img-fluid rounded-circle w-50" />
+              <img
+                src="http://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-12/256/blond-haired-man.png"
+                alt=""
+                class="img-fluid rounded-circle w-50"
+              />
             </div>
             <div class="col-6 card-title align-self-center mb-0">
               <h3>{{ student.name }}</h3>
