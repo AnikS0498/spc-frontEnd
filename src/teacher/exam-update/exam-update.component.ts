@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { IExam } from 'src/models/exam';
 import { TeacherService } from 'src/services/teacher.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-exam-update',
@@ -22,7 +23,8 @@ export class ExamUpdateComponent implements OnInit {
 
   public updateExam(){
     this.teacherService.updateExamDetails(this.exam,this.sIdList).subscribe(()=>{
-    alert("Exam updated successfully");
+    //alert("Exam updated successfully");
+    Swal.fire('Success','Exam added','success');
     });
   }
 

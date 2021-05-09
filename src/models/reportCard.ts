@@ -5,5 +5,5 @@ export class IReportCard{
     id: number;
     student: IStudent;
     isAttempted: boolean;
-    marksheet: Map<subject, number>;
+    marksheet: Map<string, number>;
 }

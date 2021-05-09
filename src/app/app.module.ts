@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AdminModule } from '../admin/admin.module';
@@ -32,6 +31,8 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { ParentDashboardComponent } from './parent-dashboard/parent-dashboard.component';
 import { AuthGuard } from 'src/services/auth.guard';
 import { TeacherDashboardComponent } from './teacher-dashboard/teacher-dashboard.component';
+import { GalleryComponent } from './gallery/gallery.component';
+import { AccountantDashboardComponent } from './accountant-dashboard/accountant-dashboard.component';
 
 
 
@@ -41,7 +42,7 @@ const appRoutes: Routes = [
   { path: 'login/parent', component: LoginPageComponent },
   { path: 'login/accountant', component: LoginPageComponent },
   { path: '', component: CarouselComponent },
-  { path: '', component: CarouselComponent },
+  // { path: '', component: CarouselComponent },
   { path: 'aboutus', component: AboutComponent },
   { path: 'contactus', component: ContactUsComponent },
   { path: 'admin/register', component: RegisterComponent },
@@ -49,6 +50,8 @@ const appRoutes: Routes = [
   { path: 'admin/dashboard', component: AdminDashboardComponent },
   { path: 'parent/dashboard', component: ParentDashboardComponent },
   { path: 'teacher/dashboard', component: TeacherDashboardComponent },
+  { path: 'gallery', component: GalleryComponent },
+  { path: 'accountant/dashboard', component: AccountantDashboardComponent },
   { path: 'admin/dashboard', component: AdminDashboardComponent ,pathMatch:'full',canActivate:[AuthGuard]}
 ];
 
@@ -70,7 +73,9 @@ const appRoutes: Routes = [
     ForgotPasswordComponent,
     AdminDashboardComponent,
     ParentDashboardComponent,
-    TeacherDashboardComponent
+    TeacherDashboardComponent,
+    GalleryComponent,
+    AccountantDashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -84,6 +89,7 @@ const appRoutes: Routes = [
     MatFormFieldModule,
     MatInputModule,
     FormsModule,
+    // Swal,
     HttpClientModule,
     RouterModule.forRoot(appRoutes),
     AppRoutingModule

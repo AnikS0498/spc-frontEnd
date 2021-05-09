@@ -3,7 +3,7 @@ import { IExam } from "./exam";
 import { IStudent } from "./student";
 import { ITeacher } from "./teacher";
 
-export interface IStandard {
+export class IStandard {
     id : number;
     grade : string;
     studentList : IStudent[];

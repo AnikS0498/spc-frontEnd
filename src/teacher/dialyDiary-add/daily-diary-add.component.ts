@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { IDiary } from 'src/models/diary';
 import { TeacherService } from 'src/services/teacher.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-daily-diary-add',
@@ -21,8 +22,9 @@ export class DailyDiaryAddComponent implements OnInit {
 
   public addDiary() {
     this.teacherService.addDailyDiaryDetails(this.diary, this.sId).subscribe(() => {
-      alert("Added Diary Successfully");
-    })
+      // alert("Added Diary Successfully");
+      Swal.fire('Success','Daily Dairy Added','success');
+    });
 
   }
 

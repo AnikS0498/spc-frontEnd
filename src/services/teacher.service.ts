@@ -1,4 +1,4 @@
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
@@ -13,6 +13,9 @@ import { IReportCard } from 'src/models/reportCard';
 })
 export class TeacherService {
 
+  token=localStorage.getItem('token');
+  headers_object=new HttpHeaders().set("Authorization", "Bearer " +this.token);
+
   private apiServerUrl = environment.baseUrl;
 
   constructor(private http: HttpClient) { }
@@ -25,14 +28,15 @@ export class TeacherService {
 
   updateExamDetails(exam: IExam, sId: string): Observable<IExam> {
     let param = new HttpParams().set("standardIdList", sId);
-    return this.http.put<IExam>(`${this.apiServerUrl}/teacher/exam/add`, exam,
+    return this.http.put<IExam>(`${this.apiServerUrl}/teacher/exam/update`, exam,
       { params: param });
   }
 
   addReportCardDetails(reportCard: IReportCard, sId: string): Observable<IReportCard> {
     let param = new HttpParams().set("studentdId", sId);
-    return this.http.post<IReportCard>(`${this.apiServerUrl}/teacher/reportCard/add`, reportCard,
-      { params: param });
+    return this.http.post<IReportCard>(`${this.apiServerUrl}teacher/reportCard/add`, reportCard,
+      { params: param,
+       headers:this.headers_object});
   }
 
   updateReportCardDetails(reportCard: IReportCard, sId: string): Observable<IReportCard> {
@@ -43,21 +47,22 @@ export class TeacherService {
 
   addAttendanceDetails(attendance: IAttendance, sId: string): Observable<IAttendance> {
     let param = new HttpParams().set("studentId", sId);
-    return this.http.post<IAttendance>(`${this.apiServerUrl}/teacher/reportCard/update`, attendance,
+    return this.http.post<IAttendance>(`${this.apiServerUrl}/teacher/attendance/add`, attendance,
       { params: param });
   }
 
   updateAttendanceDetails(attendance: IAttendance, sId: string): Observable<IAttendance> {
     let param = new HttpParams().set("studentId", sId);
-    return this.http.put<IAttendance>(`${this.apiServerUrl}/teacher/reportCard/update`, attendance,
+    return this.http.put<IAttendance>(`${this.apiServerUrl}/teacher/attendance/update`, attendance,
       { params: param });;
 
   }
 
-  addDailyDiaryDetails(diary: IDiary, sId: string): Observable<IDiary> {
-    let param = new HttpParams().set("studentId", sId);
+  addDailyDiaryDetails(diary: IDiary, studentId: string): Observable<IDiary> {
+    let param = new HttpParams().set("studentId", studentId);
     return this.http.post<IDiary>(`${this.apiServerUrl}/teacher/dailyDiary/add`, diary,
-      { params: param });
+      { params: param,
+      headers:this.headers_object });
   }
 
   updateDailyDiaryDetails(diary: IDiary, sId: string): Observable<IDiary> {

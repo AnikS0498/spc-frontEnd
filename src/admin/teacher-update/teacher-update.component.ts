@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ITeacher } from 'src/models/teacher';
 import { AdminService } from 'src/services/admin.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-teacher-update',
@@ -10,7 +11,7 @@ import { AdminService } from 'src/services/admin.service';
 export class TeacherUpdateComponent implements OnInit {
 
   teacher: ITeacher = new ITeacher();
-  sIdList:number[]=[85,87];
+  sIdList:number[]=[117,118];
   standardList:string=this.sIdList.toString();
   sId:string;
   constructor(private adminService:AdminService) { }
@@ -21,7 +22,8 @@ export class TeacherUpdateComponent implements OnInit {
   onUpdateTeacher(){
     this.adminService.updateTeacherDetails(this.teacher,this.standardList,this.sId).subscribe();
     console.log(this.teacher);
-    alert("Teacher updated successfully");
-    location.reload();
+    Swal.fire("Success","Teacher Updated","success");
   }
+
+ 
 }
