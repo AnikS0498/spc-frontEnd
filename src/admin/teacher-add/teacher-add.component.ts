@@ -12,25 +12,28 @@ import Swal from 'sweetalert2';
 export class TeacherAddComponent implements OnInit {
 
   teacher: ITeacher = new ITeacher();
-  sIdList:number[];
-  sId:number;
+  teacher_output:ITeacher = new ITeacher();
+  
   constructor(private adminService:AdminService) { }
 
   ngOnInit(): void {
   }
 
-  onAddTeacher():void{
-    this.adminService.addTeacherDetails(this.teacher).subscribe();
+  onAddTeacher(form: NgForm):void{
+    this.adminService.addTeacherDetails(this.teacher).subscribe({
+      next: teacher =>{
+        this.teacher_output=teacher;
+        Swal.fire("Success","Teacher Added with id: "+ this.teacher_output.id,"success");
+      }
+    });
     console.log(this.teacher);
+    form.resetForm();
     // alert("Teacher Added Successfully");
    
-      Swal.fire("Success","Teacher Added Successfully","success");
-    
+      
+      
     
     // location.reload();
   }
 
-  goToTeacherList(){
-    
-  }
 }

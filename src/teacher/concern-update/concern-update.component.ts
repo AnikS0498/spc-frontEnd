@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { IConcern } from 'src/models/concern';
 import { TeacherService } from 'src/services/teacher.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-concern-update',
@@ -20,9 +21,11 @@ export class ConcernUpdateComponent implements OnInit {
   }
 
   public updateConcern() {
+    //this.concern.isResolved=true;
     this.teacherService.updateConcernDetails(this.concern, this.pId).subscribe(() => {
-      alert("Updated Concern Successfully");
-    })
+      // alert("Updated Concern Successfully");
+      Swal.fire('Success','Concern Updated','success');
+    });
 
   }
 

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { IDiary } from 'src/models/diary';
 import { TeacherService } from 'src/services/teacher.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-daily-diary-update',
@@ -21,8 +22,9 @@ export class DailyDiaryUpdateComponent implements OnInit {
 
   public updateDiary() {
     this.teacherService.updateDailyDiaryDetails(this.diary, this.sId).subscribe(() => {
-      alert("Updated Diary Successfully");
-    })
+      //alert("Updated Diary Successfully");
+      Swal.fire('Success','Daily dairy updated','success');
+    });
 
   }
 

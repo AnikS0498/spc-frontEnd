@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { IParent } from 'src/models/parent';
-import { IStudent } from 'src/models/student';
 import { AdminService } from 'src/services/admin.service';
 
 @Component({

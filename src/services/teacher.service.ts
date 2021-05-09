@@ -25,7 +25,7 @@ export class TeacherService {
 
   updateExamDetails(exam: IExam, sId: string): Observable<IExam> {
     let param = new HttpParams().set("standardIdList", sId);
-    return this.http.put<IExam>(`${this.apiServerUrl}/teacher/exam/add`, exam,
+    return this.http.put<IExam>(`${this.apiServerUrl}/teacher/exam/update`, exam,
       { params: param });
   }
 
@@ -43,13 +43,13 @@ export class TeacherService {
 
   addAttendanceDetails(attendance: IAttendance, sId: string): Observable<IAttendance> {
     let param = new HttpParams().set("studentId", sId);
-    return this.http.post<IAttendance>(`${this.apiServerUrl}/teacher/reportCard/add`, attendance,
+    return this.http.post<IAttendance>(`${this.apiServerUrl}/teacher/attendance/add`, attendance,
       { params: param });
   }
 
   updateAttendanceDetails(attendance: IAttendance, sId: string): Observable<IAttendance> {
     let param = new HttpParams().set("studentId", sId);
-    return this.http.put<IAttendance>(`${this.apiServerUrl}/teacher/reportCard/add`, attendance,
+    return this.http.put<IAttendance>(`${this.apiServerUrl}/teacher/attendance/update`, attendance,
       { params: param });;
 
   }
