@@ -32,10 +32,11 @@ import { AdminGetAllStudentComponent } from './admin-get-all-students/admin-get-
       { path:'admin', component:AdminComponent },
       { path:'admin/getAllParents', component:AdminGetAllParentsComponent },
       { path:'admin/getAllTeachers', component:AdminGetAllTeachersComponent },
+      { path:'admin/getAllStudents', component: AdminGetAllStudentComponent },
       { path:'admin/teacher/add', component: TeacherAddComponent },
       { path:'admin/teacher/update', component: TeacherUpdateComponent },
       { path:'admin/parent/add', component: ParentAddComponent },
-      { path:'admin/parent/update', component: ParentUpdateComponent }
+      { path:'admin/parent/update', component: ParentUpdateComponent }  
     ])
   ]
 })

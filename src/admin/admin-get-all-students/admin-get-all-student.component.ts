@@ -14,12 +14,13 @@ export class AdminGetAllStudentComponent implements OnInit {
   constructor(private adminService:AdminService) { }
 
   ngOnInit(): void {
+    this.getStudents();
   }
 
-  getAllStudents(){
+  public getStudents():void{
     this.adminService.getAllStudent().subscribe({
-      next: student =>{
-        this.students = student;
+      next: students =>{
+        this.students = students;
       }
     });
   }

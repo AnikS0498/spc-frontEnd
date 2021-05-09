@@ -18,16 +18,13 @@
             </div>
             <ul class="list-group list-group-flush">
               <li class="list-group-item">
+                <i class="fa fa-id-card float-right"></i>ID :
+                {{ student.id }}
+              </li>
+              <li class="list-group-item">
                 <i class="fa fa-book-reader float-right"></i>Standard :
                 {{ student.standard.grade }}
               </li>
-              <li class="list-group-item">
-                <i class="fa fa-book float-right"></i>Standard :
-                {{ student.parent.name }}
-              </li>
-              <!-- <li class="list-group-item" *ngIf="teacher.standard.grade"><i
-                                      class="fa fa-book-reader float-right"></i>Class Teacher : {{teacher.standard.grade}}
-                              </li> -->
             </ul>
           </div>
           <br />
