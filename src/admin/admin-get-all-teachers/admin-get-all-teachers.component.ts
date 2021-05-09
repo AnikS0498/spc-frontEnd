@@ -28,15 +28,15 @@ export class AdminGetAllTeachersComponent implements OnInit {
     });
   }
 
-  onBack(): void{
-    this.router.navigate(['/admin']);
-  }
+  // onBack(): void{
+  //   this.router.navigate(['/admin/dashboard']);
+  // }
 
-  onClickAdd(){
-    this.router.navigate(['/admin/teacher/add'])
-  }
+  // onClickAdd(){
+  //   this.router.navigate(['/admin/teacher/add'])
+  // }
 
-  onClickUpdate(){
-    this.router.navigate(['/admin/teacher/update'])
-  }
+  // onClickUpdate(){
+  //   this.router.navigate(['/admin/teacher/update'])
+  // }
 }

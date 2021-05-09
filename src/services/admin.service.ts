@@ -46,6 +46,11 @@ export class AdminService {
     return this.http.put<IStudent>(`${this.apiServerUrl}admin/student/update`,student,
     {headers:this.headers_object});
   }
+  
+  getAllStudent():Observable<IStudent[]>{
+    return this.http.get<IStudent[]>(`${this.apiServerUrl}admin/student/getStudents`,
+    {headers:this.headers_object});
+  }
 
   addTeacherDetails(teacher:ITeacher):Observable<ITeacher>{
     return this.http.post<ITeacher>(`${this.apiServerUrl}admin/teacher/add`,teacher,

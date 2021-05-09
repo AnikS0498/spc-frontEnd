@@ -1,7 +1,7 @@
 <div class="container">
   <div class="col-md-6 mt-3 offset-md-3">
     <h3> Add Teacher </h3>
-    <form (ngSubmit)="onAddTeacher()">
+    <form #myform="ngForm" (ngSubmit)="onAddTeacher(myform)">
 
       <div class="form-group">
         <label> Name </label>

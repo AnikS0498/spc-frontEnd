@@ -9,8 +9,7 @@ import { TeacherAddComponent } from './teacher-add/teacher-add.component';
 import { TeacherUpdateComponent } from './teacher-update/teacher-update.component';
 import { ParentUpdateComponent } from './parent-update/parent-update.component';
 import { ParentAddComponent } from './parent-add/parent-add.component';
-import { StudentAddComponent } from './student-add/student-add.component';
-import { StudentUpdateComponent } from './student-update/student-update.component';
+import { AdminGetAllStudentComponent } from './admin-get-all-students/admin-get-all-student.component';
 
 
 
@@ -23,8 +22,7 @@ import { StudentUpdateComponent } from './student-update/student-update.componen
     TeacherUpdateComponent,
     ParentUpdateComponent,
     ParentAddComponent,
-    StudentAddComponent,
-    StudentUpdateComponent,
+    AdminGetAllStudentComponent,
   ],
   imports: [
     CommonModule,

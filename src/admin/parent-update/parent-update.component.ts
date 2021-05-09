@@ -25,6 +25,7 @@ export class ParentUpdateComponent implements OnInit {
   parentForm = new FormGroup({
     parent_name:new FormControl('' , [Validators.required, Validators.minLength(5) ] ),
     parent_contact:new FormControl('',[Validators.required,Validators.maxLength(10)]),
+    parent_id:new FormControl('',[Validators.required]),
     students:this.fb.array([]),
   });
   
@@ -32,6 +33,7 @@ export class ParentUpdateComponent implements OnInit {
     this.parent=new IParent();   
     this.parent.name=this.ParentName.value;
     this.parent.contact=this.ParentContact.value;
+    this.parent.id=this.ParentId.value;
     this.sId = this.student_id.value;
     this.studentId= this.sId.toString();
     this.submitted = true;
@@ -44,6 +46,10 @@ export class ParentUpdateComponent implements OnInit {
 
   get ParentContact(){
     return this.parentForm.get('parent_contact');
+  }
+
+  get ParentId(){
+    return this.parentForm.get('parent_id');
   }
  
   getControls() {

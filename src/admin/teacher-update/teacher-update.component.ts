@@ -10,7 +10,7 @@ import { AdminService } from 'src/services/admin.service';
 export class TeacherUpdateComponent implements OnInit {
 
   teacher: ITeacher = new ITeacher();
-  sIdList:number[]=[116,117];
+  sIdList:number[]=[117,118];
   standardList:string=this.sIdList.toString();
   sId:string;
   constructor(private adminService:AdminService) { }
