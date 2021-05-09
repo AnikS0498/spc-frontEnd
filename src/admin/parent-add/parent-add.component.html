@@ -10,7 +10,11 @@
                 <label> Contact No </label>
                 <input type="number" class="form-control" id="contact" [(ngModel)]='parent.contact' name="contact">
             </div>
-            <button class="btn btn-success" type="submit">Add</button>
+            <div>
+                <button class="btn btn-success" type="submit">Add</button>
+                <a [routerLink]="'/admin/dashboard'"><button class="btn btn-success float-right" >Back</button></a>
+            </div>
+            
         </form>
     </div>
 </div>
