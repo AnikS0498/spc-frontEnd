@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
@@ -12,10 +12,14 @@ export class AccountantService {
   private apiServerUrl=environment.baseUrl;
   constructor(private http:HttpClient) { }
 
-  addFeeDetails(fee: IFee,sId:number):Observable<IFee>{
-    return this.http.post<IFee>(`${this.apiServerUrl}/accountant/fee/add`,[fee,sId]);
+  addFeeDetails(fee: IFee,sId:string):Observable<IFee>{
+    let param = new HttpParams().set("studentId",sId);
+    return this.http.post<IFee>(`${this.apiServerUrl}/accountant/fee/add`,fee,
+    {params: param});
   }
-  updateFeeDetails(fee: IFee,sId:number):Observable<IFee>{
-    return this.http.put<IFee>(`${this.apiServerUrl}/accountant/fee/update`,[fee,sId]);
+  updateFeeDetails(fee: IFee,sId:string):Observable<IFee>{
+    let param = new HttpParams().set("studentId",sId);
+    return this.http.put<IFee>(`${this.apiServerUrl}/accountant/fee/update`,fee,
+    {params: param});
   }
 }

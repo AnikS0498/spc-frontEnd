@@ -1,46 +1,51 @@
-<body style="background-color: rgb(154, 177, 202)">
-    <div class="design" >
-        <br>
-        <div class="container" id="main-container">
-            <div class="row">
-                <div *ngFor="let teacher of teachers" class="col-md-6 col-xl-3">
-                    <div class="card m-b-30">
-                        <div class="card-body row">
-                            <div class="col-6">
-                                <img src="http://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-12/256/blond-haired-man.png"
-                                    alt="" class="img-fluid rounded-circle w-50">
-                            </div>
-                            <div class="col-6 card-title align-self-center mb-0">
-                                <h3>{{teacher.name}}</h3>
-                            </div>
-                        </div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item"><i class="fa fa-book float-right"></i>Subject :
-                                {{teacher.subject}}
-                            </li>
-                            <!-- <li class="list-group-item" *ngIf="teacher.standard.grade"><i
+<div class="container-fluid">
+  <div class="container" id="addUpdateButtons">
+    <div class="row">
+      <a [routerLink]="'/admin/teacher/add'"
+        ><button type="button" class="btn btn-success ml-4 mr-3">ADD</button></a
+      >
+      <a [routerLink]="'/admin/teacher/update'"
+        ><button type="button" class="btn btn-success ml-3">UPDATE</button></a
+      >
+    </div>
+  </div>
+  <div class="container" id="backButton">
+    <a href=""><button type="button" class="btn btn-primary">BACK</button></a>
+  </div>
+</div>
+
+<!-- <body style="background-color: rgb(154, 177, 202)"> -->
+<div class="design">
+  <br />
+  <div class="container" id="main-container">
+    <div class="row">
+      <div *ngFor="let teacher of teachers" class="col-md-6 col-xl-3">
+        <div class="card m-b-30">
+          <div class="card-body row">
+            <div class="col-6">
+              <img
+                src="http://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-12/256/blond-haired-man.png"
+                alt=""
+                class="img-fluid rounded-circle w-50"
+              />
+            </div>
+            <div class="col-6 card-title align-self-center mb-0">
+              <h3>{{ teacher.name }}</h3>
+            </div>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <i class="fa fa-book float-right"></i>Subject :
+              {{ teacher.subject }}
+            </li>
+            <!-- <li class="list-group-item" *ngIf="teacher.standard.grade"><i
                                     class="fa fa-book-reader float-right"></i>Class Teacher : {{teacher.standard.grade}}
                             </li> -->
-                        </ul>
-                    </div>
-                    <br>
-                </div>
-                <div >
-                    <a class="nav-link" (click)="onClickAdd()">
-                    <img src="https://www.pngkey.com/png/full/26-269900_image-black-and-white-stock-add-clip-art.png"
-                    width="150" height="150">
-                    </a>
-                </div>
-                <div>
-                    <button (click)="onClickUpdate()">
-                        Update
-                    </button>
-                </div>
-            </div>
-            
-            <button class='btn btn-outline-secondary' style='width:80px' (click)='onBack()'>
-                <i class='fa fa-chevron-left'></i> Back
-            </button>
+          </ul>
         </div>
+        <br />
+      </div>
     </div>
-</body>
+  </div>
+</div>
+<!-- </body> -->

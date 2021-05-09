@@ -1,0 +1,37 @@
+<div class="container col-md-6 offset-md-3">
+    <br>
+    <h3> Concern Update </h3>
+    <form (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+            <label> Concern Id</label>
+            <input type="text" class="form-control" id="id" [(ngModel)]="concern.id" name="id">
+        </div>
+
+        <div class="form-group">
+            <label> Parent Id</label>
+            <input type="text" class="form-control" id="parent" [(ngModel)]="pId" name="parent">
+        </div>
+
+        <div class="form-group">
+            <label> Concern</label>
+            <input type="text" class="form-control" id="concern" [(ngModel)]="concern.concern" name="concern">
+        </div>
+
+        <div class="form-group">
+            <label> Concern Type</label>
+            <input type="text" class="form-control" id="concernType" [(ngModel)]="concern.concernType" name="concernType">
+        </div>
+
+        <div class="form-group">
+            <label> Concern Status </label>
+            <input type="text" class="form-control" id="isResolved" [(ngModel)]="concern.isResolved" name="isResolved">
+        </div>
+
+        <div class="row">
+            <div class="col"> <button class="btn btn-success" type="submit">Submit</button></div>
+
+            <div class="col"><button class="btn btn-success float-right" (click)='onClickTeacher()'>Back</button></div>
+        </div>
+    </form>
+</div>

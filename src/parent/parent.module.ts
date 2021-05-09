@@ -26,7 +26,7 @@ import { AddConcernComponent } from './add-concern/add-concern.component';
   imports: [
     CommonModule,
     RouterModule.forChild([
-      { path:'parent', component:ParentComponent },
+      { path:'parent/studentDetails', component:ParentComponent },
       { path:'parent/getAttendance', component:GetAttendanceComponent },
       { path:'parent/getDailyDiary', component:GetDailyDiaryComponent },
       { path:'parent/getFee', component:GetFeeComponent },

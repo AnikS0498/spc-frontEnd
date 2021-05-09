@@ -1,0 +1,32 @@
+<div class="container col-md-6 offset-md-3">
+    <br>
+    <h3> Update Daily Diary </h3>
+    <form (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+            <label> Diary Id</label>
+            <input type="text" class="form-control" id="diary" [(ngModel)]="diary.id" name="diary">
+        </div>
+
+        <div class="form-group">
+            <label> Student Id</label>
+            <input type="text" class="form-control" id="Student" [(ngModel)]="sId" name="Student">
+        </div>
+
+        <div class="form-group">
+            <label> Diary Date</label>
+            <input type="text" class="form-control" id="generatedDate" [(ngModel)]="diary.generatedDate" name="generatedDate">
+        </div>
+
+        <div class="form-group">
+            <label> Remarks</label>
+            <input type="text" class="form-control" id="remark" [(ngModel)]="diary.remark" name="remark">
+        </div>
+
+        <div class="row">
+            <div class="col"> <button class="btn btn-success" type="submit">Submit</button></div>
+
+            <div class="col"><button class="btn btn-success float-right" (click)='onClickTeacher()'>Back</button></div>
+        </div>
+    </form>
+</div>

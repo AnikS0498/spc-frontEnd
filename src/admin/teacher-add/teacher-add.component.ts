@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ITeacher } from 'src/models/teacher';
 import { AdminService } from 'src/services/admin.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-teacher-add',
@@ -19,8 +20,12 @@ export class TeacherAddComponent implements OnInit {
   onAddTeacher():void{
     this.adminService.addTeacherDetails(this.teacher).subscribe();
     console.log(this.teacher);
-    alert("Teacher Added Successfully");
-    location.reload();
+    // alert("Teacher Added Successfully");
+   
+      Swal.fire("Success","Teacher Added Successfully","success");
+    
+    
+    // location.reload();
   }
 
 }

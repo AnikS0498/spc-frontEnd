@@ -6,7 +6,7 @@ import { IReportCard } from "./reportCard";
 
 import { IStandard } from "./standard";
 
-export interface IStudent{
+export class IStudent{
     id:number;
     name:string;
     parent:IParent;

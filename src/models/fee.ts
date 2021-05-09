@@ -1,6 +1,6 @@
 import { IStudent } from "./student";
 
-export interface IFee{
+export class IFee{
     id: number;
     student: IStudent;
     feeDue: number;

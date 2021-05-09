@@ -1,44 +1,54 @@
+<div class="container" id="addUpdateButtons">
+  <div class="row">
+    <a [routerLink]="'/admin/parent/add'"
+      ><button type="button" class="btn btn-success ml-4 mr-3">ADD</button></a
+    >
+    <a [routerLink]="'/admin/parent/update'"
+      ><button
+        type="button"
+        class="btn btn-success ml-3"
+      >
+        UPDATE
+      </button></a
+    >
+  </div>
+</div>
 
-    <div class="design">
-        <br>
-        <div class="container" id="main-container">
-            <div class="row">
-                <div *ngFor="let parent of parents" class="col-md-6 col-xl-3">
-                    <div class="card m-b-30 bg-muted">
-                        <div class="card-body row">
-                            <div class="col-6">
-                                <img src="http://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-12/256/blond-haired-man.png"
-                                    alt="" class="img-fluid rounded-circle w-50">
-                            </div>
-                            <div class="col-6 card-title align-self-center mb-0">
-                                <h2>{{parent.name}}</h2>
-                            </div>
-                        </div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item" *ngFor="let student of parent.student">
-                                <i class="fas fa-user-graduate float-right"></i>Student Name : {{student.name}}
-                            </li>
-                            <li class="list-group-item"><i class="fa fa-phone float-right"></i>Phone :
-                                {{parent.contact}}
-                            </li>
-                        </ul>
-                    </div>
-                    <br>
-                </div>
+<div class="design">
+  <br />
+  <div class="container" id="main-container">
+    <div class="row">
+      <div *ngFor="let parent of parents" class="col-md-6 col-xl-3">
+        <div class="card m-b-30 bg-muted">
+          <div class="card-body row">
+            <div class="col-6">
+              <img
+                src="http://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-12/256/blond-haired-man.png"
+                alt=""
+                class="img-fluid rounded-circle w-50"
+              />
             </div>
-            <!-- <button class='btn btn-outline-secondary' style='width:80px' (click)='onBack()'>
-                <i class='fa fa-chevron-left'></i> Back
-            </button> -->
-            <a [routerLink]="'/admin/teacher/add'"><i class="fas fa-user-plus fa-3x"></i></a>
-            <p id="addTeacherButton" class="font-weight-bold text-uppercase">Add Teacher</p>
+            <div class="col-6 card-title align-self-center mb-0">
+              <h2>{{ parent.name }}</h2>
+            </div>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item" *ngFor="let student of parent.student">
+              <i
+                *ngIf="parent.student.length === 2"
+                class="fas fa-user-graduate float-right"
+              ></i
+              >Student Name : {{ student.name }}
+            </li>
+            <li class="list-group-item">
+              <i class="fa fa-phone float-right"></i>Phone :
+              {{ parent.contact }}
+            </li>
+          </ul>
         </div>
-        <br>
+        <br />
+      </div>
     </div>
-
-    <!-- <div class="card" style="width: 18rem;">
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">An item</li>
-          <li class="list-group-item">A second item</li>
-          <li class="list-group-item">A third item</li>
-        </ul>
-      </div> -->
+  </div>
+  <br />
+</div>
