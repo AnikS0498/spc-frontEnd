@@ -10,9 +10,9 @@ body {
 
 /*maintaining aspect ratio of image in carousel*/
 
-img {
+/* img {
   object-fit: contain;
-}
+} */
 
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
@@ -104,26 +104,17 @@ img {
   }
 }
 
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  height: 100px;
-  width: 100px;
-  outline: black;
-  background-size: 100%, 100%;
-  border-radius: 50%;
-  /* border: 1px solid black; */
-  background-image: none;
+.carousel-control-next .carousel-control-next-icon {
+  background: url(../../assets/right_arrow.png) no-repeat;
+  width: 50px;
+  height: 52px;
+  opacity: 2;
 }
 
-.carousel-control-next-icon:after
-{
-  content: '>';
-  font-size: 40px;
-  color: black;
+.carousel-control-prev .carousel-control-prev-icon {
+  background: url(../../assets/left_arrow.png) no-repeat;
+  width: 50px;
+  height: 52px;
+  opacity: 2;
 }
 
-.carousel-control-prev-icon:after {
-  content: '<';
-  font-size: 40px;
-  color: black;
-}
