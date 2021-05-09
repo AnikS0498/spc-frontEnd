@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ITeacher } from 'src/models/teacher';
 import { AdminService } from 'src/services/admin.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-teacher-update',
@@ -21,5 +22,8 @@ export class TeacherUpdateComponent implements OnInit {
   onUpdateTeacher(){
     this.adminService.updateTeacherDetails(this.teacher,this.standardList,this.sId).subscribe();
     console.log(this.teacher);
+    Swal.fire("Success","Teacher Updated","success");
   }
+
+ 
 }
