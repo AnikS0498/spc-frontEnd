@@ -1,16 +1,12 @@
 <div class="container-fluid">
   <div class="container" id="addUpdateButtons">
     <div class="row">
-      <a [routerLink]="'/admin/teacher/add'"
-        ><button type="button" class="btn btn-success ml-4 mr-3">ADD</button></a
-      >
-      <a [routerLink]="'/admin/teacher/update'"
-        ><button type="button" class="btn btn-success ml-3">UPDATE</button></a
-      >
+      <a [routerLink]="'/admin/teacher/add'"><button type="button" class="btn btn-success ml-4 mr-3">ADD</button></a>
+      <a [routerLink]="'/admin/teacher/update'"><button type="button" class="btn btn-success ml-3">UPDATE</button></a>
     </div>
   </div>
   <div class="container" id="backButton">
-    <a href=""><button type="button" class="btn btn-primary">BACK</button></a>
+    <a [routerLink]="'/admin/dashboard'"><button type="button" class="btn btn-primary">BACK</button></a>
   </div>
 </div>
 
@@ -23,11 +19,7 @@
         <div class="card m-b-30">
           <div class="card-body row">
             <div class="col-6">
-              <img
-                src="http://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-12/256/blond-haired-man.png"
-                alt=""
-                class="img-fluid rounded-circle w-50"
-              />
+              <img src="../../assets/teacher.png" alt="" class="img-fluid rounded-circle w-50" />
             </div>
             <div class="col-6 card-title align-self-center mb-0">
               <h3>{{ teacher.name }}</h3>
@@ -38,9 +30,9 @@
               <i class="fa fa-book float-right"></i>Subject :
               {{ teacher.subject }}
             </li>
-            <!-- <li class="list-group-item" *ngIf="teacher.standard.grade"><i
-                                    class="fa fa-book-reader float-right"></i>Class Teacher : {{teacher.standard.grade}}
-                            </li> -->
+            <li class="list-group-item" *ngIf="teacher.standard.grade"><i
+                class="fa fa-book-reader float-right"></i>Class Teacher : {{teacher.standard.grade}}
+            </li>
           </ul>
         </div>
         <br />

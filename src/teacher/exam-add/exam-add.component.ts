@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { IExam } from 'src/models/exam';
 import { TeacherService } from 'src/services/teacher.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-exam-add',
@@ -22,7 +23,8 @@ export class ExamAddComponent implements OnInit {
 
   public addExam(){
     this.teacherService.addExamDetails(this.exam,this.sIdList).subscribe(()=>{
-    alert("Exam added successfully");
+    //alert("Exam added successfully");
+    Swal.fire('Success','Exam added','success');
     });
   }
 
