@@ -43,13 +43,13 @@ export class TeacherService {
 
   addAttendanceDetails(attendance: IAttendance, sId: string): Observable<IAttendance> {
     let param = new HttpParams().set("studentId", sId);
-    return this.http.post<IAttendance>(`${this.apiServerUrl}/teacher/reportCard/add`, attendance,
+    return this.http.post<IAttendance>(`${this.apiServerUrl}/teacher/reportCard/update`, attendance,
       { params: param });
   }
 
   updateAttendanceDetails(attendance: IAttendance, sId: string): Observable<IAttendance> {
     let param = new HttpParams().set("studentId", sId);
-    return this.http.put<IAttendance>(`${this.apiServerUrl}/teacher/reportCard/add`, attendance,
+    return this.http.put<IAttendance>(`${this.apiServerUrl}/teacher/reportCard/update`, attendance,
       { params: param });;
 
   }
