@@ -9,12 +9,14 @@ import { ParentService } from 'src/services/parent.service';
 })
 export class GetFeeComponent implements OnInit {
 
-  public fee !: IFee;
+  // public fee !: IFee;
+  fee: IFee = new IFee();
   sId : number;
 
   constructor(private parentService: ParentService) { }
 
   ngOnInit(): void {
+    this.sId = parseInt(localStorage.getItem("studentID"));
     this.getFee();
   }
 
@@ -22,6 +24,8 @@ export class GetFeeComponent implements OnInit {
     this.parentService.getFee(this.sId).subscribe({
       next: fee => {
         this.fee = fee;
+        console.log(fee);
+        
       },
       error: err => console.log(err)
       
