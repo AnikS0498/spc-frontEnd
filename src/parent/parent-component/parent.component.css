@@ -1,3 +1,7 @@
+.container-fluid{
+  background-color: #e1e5ea;
+  padding: 1%;
+}
 .container#container1{
   margin: 3% 2% 3% 2%;
   border-radius: 10px;
@@ -5,7 +9,7 @@
   padding: 1%;
   box-shadow: 1px 2px 5px grey;
   font-family: "Montserrat", sans-serif;
-  background-color: #87a7b3;
+  background-color: #ff8303;
 }
 
 .container#container2{
@@ -15,72 +19,67 @@
   padding: 1%;
   box-shadow: 1px 2px 5px grey;
   font-family: "Montserrat", sans-serif;
-  background-color: #87a7b3;
+  background-color: #ff8303;
 }
 
 .container#attendance{
   position: absolute;
-  top: 20%;
-  right: 10%;
-  /* margin: 3% 2% 3% 40%; */
+  top: 16%;
+  right: 7%;
+  margin: 3% 2% 3% 50%;
   border-radius: 10px;
   width: 50%;
   padding: 1%;
   box-shadow: 1px 2px 5px grey;
   font-family: "Montserrat", sans-serif;
-  background-color: #87a7b3;
 }
 
 .container#diary{
   position: absolute;
-  top: 20%;
-  right: 10%;
-  /* margin: 3% 2% 3% 40%; */
+  top: 16%;
+  right: 7%;
+  margin: 3% 2% 3% 50%;
   border-radius: 10px;
   width: 50%;
   padding: 1%;
   box-shadow: 1px 2px 5px grey;
   font-family: "Montserrat", sans-serif;
-  background-color: #87a7b3;
 }
 
 .container#exam{
   position: absolute;
-  top: 20%;
-  right: 10%;
-  /* margin: 3% 2% 3% 40%; */
+  top: 16%;
+  right: 7%;
+  margin: 3% 2% 3% 50%;
   border-radius: 10px;
   width: 50%;
   padding: 1%;
   box-shadow: 1px 2px 5px grey;
   font-family: "Montserrat", sans-serif;
-  background-color: #87a7b3;
 }
 
 .container#fee{
   position: absolute;
-  top: 20%;
-  right: 10%;
-  /* margin: 3% 2% 3% 40%; */
+  top: 16%;
+  right: 7%;
+  margin: 3% 2% 3% 50%;
   border-radius: 10px;
   width: 50%;
   padding: 1%;
   box-shadow: 1px 2px 5px grey;
   font-family: "Montserrat", sans-serif;
-  background-color: #87a7b3;
 }
 
 .container#reportCard{
   position: absolute;
-  top: 20%;
-  right: 10%;
-  /* margin: 3% 2% 3% 40%; */
+  top: 16%;
+  right: 7%;
+  margin: 3% 2% 3% 50%;
   border-radius: 10px;
   width: 50%;
   padding: 1%;
   box-shadow: 1px 2px 5px grey;
   font-family: "Montserrat", sans-serif;
-  background-color: #87a7b3;
 }
 
 .btn {

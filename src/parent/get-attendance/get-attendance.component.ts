@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { IAttendance } from 'src/models/attendance';
 import { ParentService } from 'src/services/parent.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-get-attendance',
@@ -27,7 +28,10 @@ export class GetAttendanceComponent implements OnInit {
         this.attendance = attendance;
         console.log(attendance);
       },
-      error: err => console.log(err)
+      error: err => {
+        console.log(err);
+        Swal.fire("Error","Student id is invalid", "error");
+      }
     });
   }
 

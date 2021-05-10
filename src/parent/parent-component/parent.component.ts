@@ -33,6 +33,7 @@ export class ParentComponent implements OnInit {
     this.showFee = false;
     this.showReportCard = false;
     this.showConcern = false;
+    this.showDiary = false;
     localStorage.setItem("studentID", this.studentId);
   }
 
