@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IFee } from 'src/models/fee';
 import { ParentService } from 'src/services/parent.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-get-fee',
@@ -11,7 +12,7 @@ export class GetFeeComponent implements OnInit {
 
   // public fee !: IFee;
   fee: IFee = new IFee();
-  sId : number;
+  sId: number;
 
   constructor(private parentService: ParentService) { }
 
@@ -25,10 +26,13 @@ export class GetFeeComponent implements OnInit {
       next: fee => {
         this.fee = fee;
         console.log(fee);
-        
+
       },
-      error: err => console.log(err)
-      
+      error: err => {
+        console.log(err)
+        Swal.fire("Error", "Student id is invalid", "error");
+      }
+
     });
   }
 

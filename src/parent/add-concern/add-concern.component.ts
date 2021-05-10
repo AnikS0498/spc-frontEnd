@@ -29,6 +29,11 @@ export class AddConcernComponent implements OnInit {
       next:concern_output=>{
         this.concern_output=concern_output;
         console.log(concern_output);
+      },
+      error: err =>{
+        console.log(err);
+        Swal.fire("Error","Fields are invalid", "error");
+        
       }
     });
     Swal.fire('Success','Concern Added Successfully','success');

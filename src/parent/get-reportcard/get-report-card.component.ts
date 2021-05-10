@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IReportCard } from 'src/models/reportCard';
 import { IStudent } from 'src/models/student';
 import { ParentService } from 'src/services/parent.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-get-report-card',
@@ -26,9 +27,12 @@ export class GetReportCardComponent implements OnInit {
       next: reportCard => {
         this.reportCard = reportCard;
         console.log(reportCard);
-        
+
       },
-      error: err => console.log(err)
+      error: err => {
+        console.log(err)
+        Swal.fire("Error", "Student id is invalid", "error");
+      }
     });
   }
 }

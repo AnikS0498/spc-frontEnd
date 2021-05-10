@@ -82,6 +82,18 @@
   font-family: "Montserrat", sans-serif;
 }
 
+.container#concern{
+  position: absolute;
+  top: 16%;
+  right: 7%;
+  margin: 3% 2% 3% 50%;
+  border-radius: 10px;
+  width: 50%;
+  padding: 1%;
+  box-shadow: 1px 2px 5px grey;
+  font-family: "Montserrat", sans-serif;
+}
+
 .btn {
   font-family: "Montserrat", sans-serif;
 }
