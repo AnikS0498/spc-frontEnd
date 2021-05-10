@@ -18,7 +18,59 @@
   background-color: #87a7b3;
 }
 
-.container#container3{
+.container#attendance{
+  position: absolute;
+  top: 20%;
+  right: 10%;
+  /* margin: 3% 2% 3% 40%; */
+  border-radius: 10px;
+  width: 50%;
+  padding: 1%;
+  box-shadow: 1px 2px 5px grey;
+  font-family: "Montserrat", sans-serif;
+  background-color: #87a7b3;
+}
+
+.container#diary{
+  position: absolute;
+  top: 20%;
+  right: 10%;
+  /* margin: 3% 2% 3% 40%; */
+  border-radius: 10px;
+  width: 50%;
+  padding: 1%;
+  box-shadow: 1px 2px 5px grey;
+  font-family: "Montserrat", sans-serif;
+  background-color: #87a7b3;
+}
+
+.container#exam{
+  position: absolute;
+  top: 20%;
+  right: 10%;
+  /* margin: 3% 2% 3% 40%; */
+  border-radius: 10px;
+  width: 50%;
+  padding: 1%;
+  box-shadow: 1px 2px 5px grey;
+  font-family: "Montserrat", sans-serif;
+  background-color: #87a7b3;
+}
+
+.container#fee{
+  position: absolute;
+  top: 20%;
+  right: 10%;
+  /* margin: 3% 2% 3% 40%; */
+  border-radius: 10px;
+  width: 50%;
+  padding: 1%;
+  box-shadow: 1px 2px 5px grey;
+  font-family: "Montserrat", sans-serif;
+  background-color: #87a7b3;
+}
+
+.container#reportCard{
   position: absolute;
   top: 20%;
   right: 10%;
