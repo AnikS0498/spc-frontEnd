@@ -225,10 +225,11 @@
         class="collapse"
         aria-labelledby="headingSix"
         data-parent="#accordionExample"
+        
       >
         <div class="card-body">
-          <input type="number" placeholder="Parent ID" class="form-control" />
-          <select name="" id="" class="form-control mt-2">
+          <input type="number" placeholder="Parent ID" class="form-control" [(ngModel)]='parentID'/>
+          <select name="concernType" id="concernType" class="form-control mt-2" [(ngModel)]='concernType'>
             <option value="0">Select</option>
             <option value="ACADEMIC">Academic</option>
             <option value="ATTENDANCE">Attendance</option>
@@ -239,10 +240,12 @@
             type="text"
             placeholder="What is your concern?"
             class="form-control mt-2"
+            [(ngModel)]='concern'
           />
           <button
             type="submit"
             class="btn btn-sm btn-success text-uppercase mt-2"
+            (click)='onClickAddConcern()'
           >
             submit
           </button>
@@ -266,4 +269,7 @@
 </div>
 <div class="container" id="reportCard" *ngIf="showReportCard">
   <app-get-report-card></app-get-report-card>
+</div>
+<div class="container" id="addConcern" *ngIf="showConcern">
+  <app-add-concern></app-add-concern>
 </div>

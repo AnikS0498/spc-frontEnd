@@ -16,16 +16,14 @@ export class GetDailyDiaryComponent implements OnInit {
   constructor(private parentService: ParentService) { }
 
   ngOnInit(): void {
-    this.sId = parseInt(localStorage.getItem("diaryID"));
+    this.sId = parseInt(localStorage.getItem("studentID"));
     this.getDailyDiary();
   }
 
   getDailyDiary(): void {
-    this.parentService.getDialyDiary(this.sId).subscribe({
+    this.parentService.getDialyDiary(this.sId).subscribe({ 
       next: dailyDiary => {
-        this.dailyDiary = dailyDiary;
-        console.log(dailyDiary);
-        
+        this.dailyDiary = dailyDiary;        
       },
       error: err => console.log(err)
     });

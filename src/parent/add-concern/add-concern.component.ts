@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IConcern } from 'src/models/concern';
-import { IParent } from 'src/models/parent';
+import Swal from 'sweetalert2';  
 import { ParentService } from 'src/services/parent.service';
 
 @Component({
@@ -10,18 +10,28 @@ import { ParentService } from 'src/services/parent.service';
 })
 export class AddConcernComponent implements OnInit {
 
-  pId : string;
-  concern !: IConcern;
+  pId: string;
+  concern: IConcern = new IConcern();
+  concern_output:IConcern = new IConcern();
 
   constructor(private parentService: ParentService) { }
 
   ngOnInit(): void {
+    this.concern.concern = localStorage.getItem('concern');
+    this.concern.concernType = JSON.parse(localStorage.getItem('concernType'));
+    this.pId = localStorage.getItem('parentID');
     this.onAddConcern();
   }
 
-  onAddConcern(){
-    this.parentService.addConcern(this.concern,this.pId).subscribe();
+  onAddConcern() {
     console.log(this.concern);
+    this.parentService.addConcern(this.concern, this.pId).subscribe({
+      next:concern_output=>{
+        this.concern_output=concern_output;
+        console.log(concern_output);
+      }
+    });
+    Swal.fire('Success','Concern Added Successfully','success');
   }
 
 }

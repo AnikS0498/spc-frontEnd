@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { IFee } from 'src/models/fee';
 import { AccountantService } from 'src/services/accountant.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-fee-update',
@@ -19,21 +21,13 @@ export class FeeUpdateComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public updateFee(){ 
+  public updateFee(form:NgForm){ 
       this.accountantService.updateFeeDetails(this.fee, this.student).subscribe(()=>{
-
-        alert("fee updated successfully!!!!");
-
+        Swal.fire('Success','Fee Updated','success');
       });  
       
   }
 
-    onClickAccountant(){
-      this.router.navigate(['accountant']);
-    }
-
-    onSubmit(){
-      this.updateFee();
-  }
+   
 
 }

@@ -1,7 +1,7 @@
 <div class="container col-md-6 offset-md-3">
     <br>
     <h3> Add Attendance </h3>
-    <form #myform="ngForm" (ngSubmit)="onSubmit()">
+    <form #myform="ngForm" (ngSubmit)="addAttendance(myform)">
 
         <div class="form-group">
             <label> Student Id</label>
@@ -18,8 +18,8 @@
         <div class="form-group">
             <label> Attendance Date</label>
             <input type="text" class="form-control" id="attendanceDate" [(ngModel)]="attendance.attendanceDate"
-                #attendanceDate="ngModel" name="attendanceDate" placeholder="yyyy-mm-dd" required
-                pattern="^[0-9]{4}[-][0-9]{2}[-][0-9]{2}+$">
+                #attendanceDate="ngModel" name="attendanceDate" placeholder="yyyy-mm-dd" required>
+                <!-- pattern="^[0-9]{4}+[-]+[0-9]{2}+[-]+[0-9]{2}$"> -->
             <div *ngIf="attendanceDate.invalid && (attendanceDate.dirty || attendanceDate.touched)"
                 class="alert text-danger font-weight-normal">
                 <div *ngIf="attendanceDate.errors.required">Enter Valid Date</div>

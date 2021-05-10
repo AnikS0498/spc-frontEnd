@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { concernType } from 'src/models/concernType';
 import { ParentService } from 'src/services/parent.service';
 
 @Component({
@@ -14,7 +15,11 @@ export class ParentComponent implements OnInit {
   showExam: boolean = false;
   showFee: boolean = false;
   showReportCard: boolean = false;
+  showConcern: boolean = false;
   studentId: string;
+  parentID: string;
+  concern: string;
+  concernType: concernType;
   examDate: Date;
 
   constructor(private parentService: ParentService, private router: Router) { }
@@ -27,6 +32,7 @@ export class ParentComponent implements OnInit {
     this.showExam = false;
     this.showFee = false;
     this.showReportCard = false;
+    this.showConcern = false;
     localStorage.setItem("studentID", this.studentId);
   }
 
@@ -36,6 +42,7 @@ export class ParentComponent implements OnInit {
     this.showExam = false;
     this.showFee = false;
     this.showReportCard = false;
+    this.showConcern = false;
     localStorage.setItem("studentID", this.studentId);
   }
 
@@ -45,6 +52,7 @@ export class ParentComponent implements OnInit {
     this.showDiary = false;
     this.showFee = false;
     this.showReportCard = false;
+    this.showConcern = false;
     localStorage.setItem("examDate", JSON.stringify(this.examDate));
   }
 
@@ -54,6 +62,7 @@ export class ParentComponent implements OnInit {
     this.showDiary = false;
     this.showReportCard = false;
     this.showExam = false;
+    this.showConcern = false;
     localStorage.setItem("studentID", this.studentId);
   }
 
@@ -63,10 +72,20 @@ export class ParentComponent implements OnInit {
     this.showDiary = false;
     this.showFee = false;
     this.showExam = false;
+    this.showConcern = false;
     localStorage.setItem("studentID", this.studentId);
   }
 
   onClickAddConcern() {
+    this.showReportCard = false;
+    this.showAttendance = false;
+    this.showDiary = false;
+    this.showFee = false;
+    this.showExam = false;
+    this.showConcern = true;
+    localStorage.setItem('parentID', this.parentID);
+    localStorage.setItem('concern', this.concern);
+    localStorage.setItem('concernType', JSON.stringify(this.concernType));
   }
 
 

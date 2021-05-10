@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { IFee } from 'src/models/fee';
 import { AccountantService } from 'src/services/accountant.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-fee-add',
@@ -10,7 +12,8 @@ import { AccountantService } from 'src/services/accountant.service';
 })
 export class FeeAddComponent implements OnInit {
 
-  fee: IFee = new IFee;
+  fee: IFee = new IFee();
+  fee_output: IFee = new IFee();
   student: string;
   constructor(private accountantService : AccountantService,
               private router: Router) { }
@@ -19,19 +22,15 @@ export class FeeAddComponent implements OnInit {
   }
  
 
-  public addFee(){
-    this.accountantService.addFeeDetails(this.fee, this.student).subscribe(()=>{
-    alert("Added Fee Successfully");
-    })
-
+  public addFee(form:NgForm){
+    this.accountantService.addFeeDetails(this.fee, this.student).subscribe({
+      next: fee_output=>{
+        this.fee_output=fee_output;
+        Swal.fire('Success',`Fee Added with id ${this.fee_output.id}`,'success');
+      }
+    });
+    form.reset();
   }
 
-  onClickAccountant(){
-    this.router.navigate(['accountant']);
-  }
-
-  onSubmit(){
-       this.addFee();
-   }
-
+  
 }

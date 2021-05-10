@@ -23,16 +23,17 @@
 
         <div class="form-group">
             <label> Marksheet</label>
-            <form *ngFor="let item of myStringArray">
+            <div *ngFor="let item of myStringArray">
                 <label>{{item}}</label><br>
-                <input name="value" [ngModel]="map.get(item)" (ngModelChange)="map.set(item, $event)">
-            </form>
+                <input class="form-control" name="value" [ngModel]="map.get(item)" (ngModelChange)="map.set(item, $event)">
+            </div>
         </div>
 
         <div class="row">
             <div class="col"> <button class="btn btn-success" type="submit">Submit</button></div>
 
-            <div class="col"><button class="btn btn-success float-right" (click)='onClickTeacher()'>Back</button></div>
+            <div class="col"><a [routerLink]="'/teacher/dashboard'">
+                <button class="btn btn-success float-right">Back</button></a></div>
         </div>
     </form>
 </div>

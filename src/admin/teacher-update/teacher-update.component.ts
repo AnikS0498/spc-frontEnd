@@ -20,7 +20,7 @@ export class TeacherUpdateComponent implements OnInit {
   }
 
   onUpdateTeacher(){
-    this.adminService.updateTeacherDetails(this.teacher,this.standardList,this.sId).subscribe();
+   // this.adminService.updateTeacherDetails(this.teacher,this.standardList,this.sId).subscribe();
     console.log(this.teacher);
     Swal.fire("Success","Teacher Updated","success");
   }

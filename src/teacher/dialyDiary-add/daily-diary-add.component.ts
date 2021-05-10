@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { IDiary } from 'src/models/diary';
 import { TeacherService } from 'src/services/teacher.service';
@@ -11,29 +12,25 @@ import Swal from 'sweetalert2';
 })
 export class DailyDiaryAddComponent implements OnInit {
 
-  diary: IDiary = new IDiary;
+  diary: IDiary = new IDiary();
+  diary_output: IDiary = new IDiary();
   sId: string;
 
   constructor(private teacherService: TeacherService,
-              private router: Router) { }
+    private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  public addDiary() {
-    this.teacherService.addDailyDiaryDetails(this.diary, this.sId).subscribe(() => {
-      // alert("Added Diary Successfully");
-      Swal.fire('Success','Daily Dairy Added','success');
+  public addDiary(form: NgForm) {
+    this.teacherService.addDailyDiaryDetails(this.diary, this.sId).subscribe({
+      next: diary_output => {
+        this.diary_output = diary_output;
+        Swal.fire('Success', `Daily Dairy Added ${this.diary_output.id}`, 'success');
+      }
     });
+    form.reset();
 
   }
-
-  onClickTeacher(){
-    this.router.navigate(['teacher']);
-  }
-
-  onSubmit(){
-       this.addDiary();
-   }
 
 }

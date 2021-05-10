@@ -1,7 +1,7 @@
 <div class="container col-md-6 offset-md-3">
     <br>
     <h3> Update Attendance </h3>
-    <form #myform="ngForm" (ngSubmit)="onSubmit()">
+    <form #myform="ngForm" (ngSubmit)="updateAttendance(myform)">
 
         <div class="form-group">
             <label> Attendance Id</label>
@@ -28,7 +28,7 @@
         <div class="form-group">
             <label> Attendance Date</label>
             <input type="text" class="form-control" id="attendanceDate" placeholder="yyyy-mm-dd" [(ngModel)]="attendance.attendanceDate"
-            #attendanceDate="ngModel" name="attendanceDate" required pattern="^[0-9]{4}+\-+[0-9]{2}\-+[0-9]{2}$">
+            #attendanceDate="ngModel" name="attendanceDate" required >
             <div *ngIf="attendanceDate.invalid && (attendanceDate.dirty || attendanceDate.touched)"
                 class="alert text-danger font-weight-normal">
                 <div *ngIf="attendanceDate.errors.required">Date Required</div>
@@ -39,8 +39,8 @@
         <div class="form-group">
             <label> Attendance Status</label>
             <select class="form-control" id="present" [(ngModel)]="attendance.present" name="present" required>
-                <option value="1" >Present</option>
-                <option value="0">Absent</option>
+                <option value="true" >Present</option>
+                <option value="false">Absent</option>
             </select>
         </div>
 

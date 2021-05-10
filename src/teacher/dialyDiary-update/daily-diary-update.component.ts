@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { IDiary } from 'src/models/diary';
 import { TeacherService } from 'src/services/teacher.service';
@@ -20,21 +21,13 @@ export class DailyDiaryUpdateComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public updateDiary() {
+  public updateDiary(form:NgForm) {
     this.teacherService.updateDailyDiaryDetails(this.diary, this.sId).subscribe(() => {
       //alert("Updated Diary Successfully");
       Swal.fire('Success','Daily dairy updated','success');
     });
-
+    form.reset();
   }
-
-  onClickTeacher(){
-    this.router.navigate(['teacher']);
-  }
-
-  onSubmit(){
-       this.updateDiary();
-   }
 
 
 }

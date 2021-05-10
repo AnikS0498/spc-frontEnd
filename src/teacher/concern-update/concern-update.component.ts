@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { IConcern } from 'src/models/concern';
 import { TeacherService } from 'src/services/teacher.service';
@@ -11,7 +12,7 @@ import Swal from 'sweetalert2';
 })
 export class ConcernUpdateComponent implements OnInit {
 
-  concern: IConcern = new IConcern;
+  concern_object: IConcern = new IConcern;
   pId: string;
 
   constructor(private teacherService: TeacherService,
@@ -20,22 +21,15 @@ export class ConcernUpdateComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public updateConcern() {
+  public updateConcern(form:NgForm) {
     //this.concern.isResolved=true;
-    this.teacherService.updateConcernDetails(this.concern, this.pId).subscribe(() => {
+    console.log(this.concern_object);
+    this.teacherService.updateConcernDetails(this.concern_object, this.pId).subscribe(() => {
       // alert("Updated Concern Successfully");
-      Swal.fire('Success','Concern Updated','success');
+      Swal.fire('Success','Concern Updated','success');  
     });
-
+    form.reset();
   }
-
-  onClickTeacher(){
-    this.router.navigate(['teacher']);
-  }
-
-  onSubmit(){
-       this.updateConcern();
-   }
 
 }
 

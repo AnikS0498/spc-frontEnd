@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { IAttendance } from 'src/models/attendance';
 import { TeacherService } from 'src/services/teacher.service';
@@ -11,7 +12,7 @@ import Swal from 'sweetalert2';
 })
 export class AttendanceUpdateComponent implements OnInit {
 
-  attendance: IAttendance = new IAttendance;
+  attendance: IAttendance = new IAttendance();
   sId: string;
 
   constructor(private teacherService: TeacherService,
@@ -20,19 +21,12 @@ export class AttendanceUpdateComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public updateAttendance(){
+  public updateAttendance(form: NgForm){
     this.teacherService.updateAttendanceDetails(this.attendance,this.sId).subscribe(()=>{
-      //alert("Updated Attendance Successfully");
-      Swal.fire('Success','Attendance updated','success');
-      });
+      Swal.fire('Success',`Attendance Updated `,'success');
+    });
+    form.reset();
   }
 
-  onClickTeacher(){
-    this.router.navigate(['teacher']);
-  }
-
-  onSubmit(){
-       this.updateAttendance();
-   }
 
 }

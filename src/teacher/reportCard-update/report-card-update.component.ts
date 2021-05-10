@@ -31,10 +31,6 @@ export class ReportCardUpdateComponent implements OnInit {
     console.log(JSON.stringify (this.map));
   }
 
-  onClickTeacher(){
-    this.router.navigate(['teacher']);
-  }
-
   onSubmit(){
        this.updateReportCard();
    }

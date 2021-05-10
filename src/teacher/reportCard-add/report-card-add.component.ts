@@ -14,7 +14,7 @@ export class ReportCardAddComponent implements OnInit {
   // reportCardForm:FormGroup;
   reportCard: IReportCard = new IReportCard();
   sId: string;
-  public map = new Map<subject,number>();
+  public map = new Map<string,number>();
   // public mystring=['helo','wcbsdcjba'];
   myStringArray = ['ENGLISH','HINDI','MATHS','SOCIAL_STUDIES',
   'SCIENCE','HISTORY_CIVICS','GEOGRAPHY'];

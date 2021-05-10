@@ -12,7 +12,7 @@ import Swal from 'sweetalert2';
 export class ExamUpdateComponent implements OnInit {
   
   exam: IExam = new IExam;
-  public standards:number[]=[116,117];
+  public standards:number[]=[117,118];
   sIdList: string = this.standards.toString();
 
   constructor(private teacherService: TeacherService,

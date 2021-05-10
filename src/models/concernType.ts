@@ -1,3 +1,3 @@
-export enum concernType{
-    ACADEMIC,ATTENDANCE,PERFORMANCE,FEES
+export enum concernType {
+    ACADEMIC, ATTENDANCE, PERFORMANCE, FEES
 }
