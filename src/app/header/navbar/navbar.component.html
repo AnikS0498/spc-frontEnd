@@ -25,9 +25,12 @@
       <li class="nav-item">
         <a class="nav-link" [routerLink]="'/gallery'">Gallery</a>
       </li>
-      <li class="float-right">
+      <li class="float-right" *ngIf='!show'>
           <a class="nav-link" href="#login-component">Login</a>
       </li>
+      <li class="float-right" *ngIf='show'>
+        <a class="nav-link" (click)='onClick()' [routerLink]="''">LogOut</a>
+     </li>
     </ul>
   </div>
 </nav>
