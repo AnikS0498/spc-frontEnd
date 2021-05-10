@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IParent } from 'src/models/parent';
 import { AdminService } from 'src/services/admin.service';
+import Swal from'sweetalert2';
 
 @Component({
   selector: 'app-parent-add',
@@ -19,7 +20,8 @@ export class ParentAddComponent implements OnInit {
   onAddParent():void{
     this.adminService.addParentDetails(this.parent).subscribe();
     console.log(this.parent);
-    alert("Parent Added Successfully");
+    //alert("Parent Added Successfully");
+    Swal.fire('Success','Parent added','success');
     location.reload();
   }
 }
