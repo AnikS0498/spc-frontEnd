@@ -119,7 +119,7 @@
 
         <div class="form-group">
             <label> Marksheet</label>
-            <form *ngFor="let item of myStringArray">
+            <form *ngFor="let item of mystring">
                 <label>{{item}}</label><br>
                 <input name="value" [ngModel]="map.get(item)" (ngModelChange)="map.set(item, $event)">
             </form>

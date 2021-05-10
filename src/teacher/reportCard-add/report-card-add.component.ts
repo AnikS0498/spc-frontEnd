@@ -12,12 +12,14 @@ import { TeacherService } from 'src/services/teacher.service';
 })
 export class ReportCardAddComponent implements OnInit {
   // reportCardForm:FormGroup;
-  reportCard: IReportCard = new IReportCard;
+  reportCard: IReportCard = new IReportCard();
   sId: string;
-  public map = new Map<string,number>();
-  public mystring=['helo','wcbsdcjba'];
+  public map = new Map<subject,number>();
+  // public mystring=['helo','wcbsdcjba'];
   myStringArray = ['ENGLISH','HINDI','MATHS','SOCIAL_STUDIES',
   'SCIENCE','HISTORY_CIVICS','GEOGRAPHY'];
+
+  mystring:subject[]=[subject.ENGLISH];
 
   constructor(private teacherService:TeacherService,
               private router: Router) { }
@@ -31,11 +33,12 @@ export class ReportCardAddComponent implements OnInit {
   }
 
   public addReportCard(){
-    this.reportCard.marksheet=this.map;
-    this.teacherService.addReportCardDetails(this.reportCard,this.sId).subscribe(() => {
-      alert("Added ReportCard Successfully")
-    })
-    console.log(JSON.stringify (this.map));
+    // this.reportCard.marksheet=this.map;
+    // this.teacherService.addReportCardDetails(this.reportCard,this.sId).subscribe(() => {
+    //   alert("Added ReportCard Successfully")
+    // });
+    console.log(this.map);
+    
   }
 
   onClickTeacher(){
