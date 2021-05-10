@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
@@ -13,6 +13,7 @@ import { IReportCard } from 'src/models/reportCard';
   providedIn: 'root'
 })
 export class ParentService {
+  
   token=localStorage.getItem('token');
   headers_object=new HttpHeaders().set("Authorization", "Bearer " +this.token);
 
@@ -21,19 +22,23 @@ export class ParentService {
   constructor(private http: HttpClient) { }
 
   getReportCardDetails(sId: number): Observable<IReportCard> {
-    return this.http.get<IReportCard>(`${this.apiServerUrl}/parent/student/reportCard/${sId}`);
+    return this.http.get<IReportCard>(`${this.apiServerUrl}parent/student/reportCard/${sId}`,
+    {headers:this.headers_object});
   }
 
   getFee(sId: number): Observable<IFee> {
-    return this.http.get<IFee>(`${this.apiServerUrl}/parent/student/fee/${sId}`);
+    return this.http.get<IFee>(`${this.apiServerUrl}parent/student/fee/${sId}`,
+    {headers:this.headers_object});
   }
   
   getExamDetails(date: Date): Observable<IExam> {
-    return this.http.get<IExam>(`${this.apiServerUrl}/parent/student/exam/${date}`);
+    return this.http.get<IExam>(`${this.apiServerUrl}parent/student/exam/${date}`,
+    {headers:this.headers_object});
   }
 
   getDialyDiary(sId: number): Observable<IDiary> {
-    return this.http.get<IDiary>(`${this.apiServerUrl}/parent/student/diary/${sId}`);
+    return this.http.get<IDiary>(`${this.apiServerUrl}parent/student/diary/${sId}`,
+    {headers:this.headers_object});
   }
 
   getAttendance(sId: number): Observable<IAttendance> {
@@ -41,7 +46,9 @@ export class ParentService {
     {headers:this.headers_object});
   }
 
-  addConcern(concern: IConcern, pId: number): Observable<IConcern> {
-    return this.http.post<IConcern>(`${this.apiServerUrl}/parent/concern/add`, [concern, pId]);
+  addConcern(concern: IConcern, pId: string): Observable<IConcern> {
+    let param = new HttpParams().set("parentId", pId);
+    return this.http.post<IConcern>(`${this.apiServerUrl}parent/concern/add`, concern,
+    {params: param});
   }
 }
