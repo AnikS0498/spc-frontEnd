@@ -10,7 +10,7 @@ import { ParentService } from 'src/services/parent.service';
 })
 export class AddConcernComponent implements OnInit {
 
-  pId : number;
+  pId : string;
   concern !: IConcern;
 
   constructor(private parentService: ParentService) { }

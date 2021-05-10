@@ -1,16 +1,28 @@
 <div class="container col-md-6 offset-md-3">
   <br>
   <h3> Concern Update </h3>
-  <form (ngSubmit)="onSubmit()">
+  <form #myform="ngForm" (ngSubmit)="onSubmit()">
 
     <div class="form-group">
       <label> Concern Id</label>
-      <input type="text" class="form-control" id="id" [(ngModel)]="concern.id" name="id">
+      <input type="text" class="form-control" id="id" [(ngModel)]="concern.id" #concernId="ngModel" name="concernId"
+        required pattern="^[0-9]+$" maxlength="3">
+      <div *ngIf="concernId.invalid && (concernId.dirty || concernId.touched)"
+        class="alert text-danger font-weight-normal">
+        <div *ngIf="concernId.errors.required">Concern ID is required</div>
+        <div *ngIf="concernId.errors.pattern">Concern ID must be in digits only</div>
+      </div>
     </div>
 
     <div class="form-group">
       <label> Parent Id</label>
-      <input type="text" class="form-control" id="parent" [(ngModel)]="pId" name="parent">
+      <input type="text" class="form-control" id="parent" [(ngModel)]="pId"
+      #parentId="ngModel" name="parentId" required pattern="^[0-9]+$" maxlength="3">
+      <div *ngIf="parentId.invalid && (parentId.dirty || parentId.touched)"
+        class="alert text-danger font-weight-normal">
+        <div *ngIf="parentId.errors.required">Parent ID is required</div>
+        <div *ngIf="parentId.errors.pattern">Parent ID must be in digits only</div>
+      </div>
     </div>
 
     <div class="form-group">
@@ -20,7 +32,7 @@
 
     <div class="form-group">
       <label> Concern Type</label>
-      <select class="form-control" id="concernType" [(ngModel)]="concern.concernType" name="concernType">
+      <select class="form-control" id="concernType" [(ngModel)]="concern.concernType" name="concernType" required>
         <!-- <option value="0">Select</option> -->
         <option value="ACADEMIC">Academic</option>
         <option value="ATTENDANCE">Attendance</option>
@@ -35,9 +47,10 @@
         </div> -->
 
     <div class="row">
-      <div class="col"> <button class="btn btn-success" type="submit">Submit</button></div>
+      <div class="col"> <button [disabled]="!myform.valid" class="btn btn-success" type="submit">Submit</button></div>
 
-      <div class="col"><a [routerLink]="'/teacher/dashboard'"><button class="btn btn-success float-right">Back</button></a></div>
+      <div class="col"><a [routerLink]="'/teacher/dashboard'"><button
+            class="btn btn-success float-right">Back</button></a></div>
     </div>
   </form>
 </div>

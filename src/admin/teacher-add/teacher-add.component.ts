@@ -17,6 +17,7 @@ export class TeacherAddComponent implements OnInit {
   constructor(private adminService:AdminService) { }
 
   ngOnInit(): void {
+    
   }
 
   onAddTeacher(form: NgForm):void{
@@ -26,14 +27,7 @@ export class TeacherAddComponent implements OnInit {
         Swal.fire("Success","Teacher Added with id: "+ this.teacher_output.id,"success");
       }
     });
-    console.log(this.teacher);
     form.resetForm();
-    // alert("Teacher Added Successfully");
-   
-      
-      
-    
-    // location.reload();
   }
 
 }

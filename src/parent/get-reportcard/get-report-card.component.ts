@@ -9,12 +9,14 @@ import { ParentService } from 'src/services/parent.service';
 })
 export class GetReportCardComponent implements OnInit {
 
-  public reportCard !: IReportCard;
+  // public reportCard !: IReportCard;
+  reportCard: IReportCard = new IReportCard();
   sId: number;
 
   constructor(private parentService: ParentService) { }
 
   ngOnInit(): void {
+    this.sId = parseInt(localStorage.getItem("studentID"));
     this.getReportCard();
   }
 
@@ -22,6 +24,8 @@ export class GetReportCardComponent implements OnInit {
     this.parentService.getReportCardDetails(this.sId).subscribe({
       next: reportCard => {
         this.reportCard = reportCard;
+        console.log(reportCard);
+        
       },
       error: err => console.log(err)
     });

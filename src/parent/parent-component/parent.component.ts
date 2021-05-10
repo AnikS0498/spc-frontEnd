@@ -9,33 +9,66 @@ import { ParentService } from 'src/services/parent.service';
 })
 export class ParentComponent implements OnInit {
 
-  constructor(private parentService: ParentService, private router:Router) { }
+  showAttendance: boolean = false;
+  showDiary: boolean = false;
+  showExam: boolean = false;
+  showFee: boolean = false;
+  showReportCard: boolean = false;
+  studentId: string;
+  examDate: string;
+
+  constructor(private parentService: ParentService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  onClickAttendance(){
-    this.router.navigate(['parent/getAttendance']);
+  onClickAttendance() {
+    this.showAttendance = true;
+    this.showExam = false;
+    this.showFee = false;
+    this.showReportCard = false;
+    localStorage.setItem("studentID", this.studentId);
   }
 
-  onClickDailyDiary(){
-    this.router.navigate(['parent/getDailyDiary']);
+  onClickDailyDiary() {
+    this.showAttendance = false;
+    this.showDiary = true;
+    this.showExam = false;
+    this.showFee = false;
+    this.showReportCard = false;
+    localStorage.setItem("studentID", this.studentId);
   }
 
-  onClickExam(){
-    this.router.navigate(['parent/getExam']);
+  onClickExam() {
+    this.showExam = true;
+    this.showAttendance = false;
+    this.showDiary = false;
+    this.showFee = false;
+    this.showReportCard = false;
+    localStorage.setItem("examDate", this.examDate);
   }
 
-  onClickFee(){
-    this.router.navigate(['parent/getFee']);
+  onClickFee() {
+    this.showFee = true;
+    this.showAttendance = false;
+    this.showDiary = false;
+    this.showReportCard = false;
+    this.showExam = false;
+    localStorage.setItem("studentID", this.studentId);
   }
 
-  onClickReportCard(){
-    this.router.navigate(['parent/getReportCard']);
+  onClickReportCard() {
+    this.showReportCard = true;
+    this.showAttendance = false;
+    this.showDiary = false;
+    this.showFee = false;
+    this.showExam = false;
+    localStorage.setItem("studentID", this.studentId);
   }
 
-  onClickAddConcern(){
-    this.router.navigate(['parent/addConcern']);
+  onClickAddConcern() {
   }
+
+
 
 }

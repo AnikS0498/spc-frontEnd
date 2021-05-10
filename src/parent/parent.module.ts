@@ -8,6 +8,7 @@ import { GetDailyDiaryComponent } from './get-daily-diary/get-daily-diary.compon
 import { GetAttendanceComponent } from './get-attendance/get-attendance.component';
 import { RouterModule } from '@angular/router';
 import { AddConcernComponent } from './add-concern/add-concern.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -25,6 +26,7 @@ import { AddConcernComponent } from './add-concern/add-concern.component';
   ],
   imports: [
     CommonModule,
+    FormsModule,
     RouterModule.forChild([
       { path:'parent/studentDetails', component:ParentComponent },
       { path:'parent/getAttendance', component:GetAttendanceComponent },

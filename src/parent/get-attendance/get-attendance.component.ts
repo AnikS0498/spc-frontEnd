@@ -10,18 +10,22 @@ import { ParentService } from 'src/services/parent.service';
 })
 export class GetAttendanceComponent implements OnInit {
 
-  public attendance !:  IAttendance;
-  sId : number;
-  constructor(private parentService : ParentService,private router: Router) { }
+  // public attendance !:  IAttendance;
+  attendance: IAttendance = new IAttendance();
+  sId: number;
+
+  constructor(private parentService: ParentService, private router: Router) { }
 
   ngOnInit(): void {
+    this.sId = parseInt(localStorage.getItem("studentID"));
     this.getAttendance();
   }
 
   getAttendance(): void {
     this.parentService.getAttendance(this.sId).subscribe({
       next: attendance => {
-          this.attendance = attendance;
+        this.attendance = attendance;
+        console.log(attendance);
       },
       error: err => console.log(err)
     });
