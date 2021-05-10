@@ -12,10 +12,11 @@ export class GetAttendanceComponent implements OnInit {
 
   public attendance !:  IAttendance;
   sId : number;
+  
   constructor(private parentService : ParentService,private router: Router) { }
 
   ngOnInit(): void {
-    this.getAttendance();
+    
   }
 
   getAttendance(): void {
