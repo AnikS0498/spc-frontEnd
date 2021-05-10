@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IReportCard } from 'src/models/reportCard';
+import { IStudent } from 'src/models/student';
 import { ParentService } from 'src/services/parent.service';
 
 @Component({

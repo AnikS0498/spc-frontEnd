@@ -16,7 +16,7 @@ export class GetDailyDiaryComponent implements OnInit {
   constructor(private parentService: ParentService) { }
 
   ngOnInit(): void {
-    this.sId = parseInt(localStorage.getItem("diaryID"));
+    this.sId = parseInt(localStorage.getItem("studentID"));
     this.getDailyDiary();
   }
 

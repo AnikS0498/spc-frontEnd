@@ -27,6 +27,7 @@ export class ParentComponent implements OnInit {
     this.showExam = false;
     this.showFee = false;
     this.showReportCard = false;
+    this.showDiary = false;
     localStorage.setItem("studentID", this.studentId);
   }
 
