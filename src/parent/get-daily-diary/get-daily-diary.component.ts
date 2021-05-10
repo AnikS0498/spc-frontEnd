@@ -9,11 +9,14 @@ import { ParentService } from 'src/services/parent.service';
 })
 export class GetDailyDiaryComponent implements OnInit {
 
-  public dailyDiary !: IDiary;
-  sId:number;
-  constructor(private parentService : ParentService) { }
+  // public dailyDiary !: IDiary;
+  dailyDiary: IDiary = new IDiary();
+  sId: number;
+
+  constructor(private parentService: ParentService) { }
 
   ngOnInit(): void {
+    this.sId = parseInt(localStorage.getItem("diaryID"));
     this.getDailyDiary();
   }
 
@@ -21,6 +24,8 @@ export class GetDailyDiaryComponent implements OnInit {
     this.parentService.getDialyDiary(this.sId).subscribe({
       next: dailyDiary => {
         this.dailyDiary = dailyDiary;
+        console.log(dailyDiary);
+        
       },
       error: err => console.log(err)
     });
