@@ -42,6 +42,7 @@ export class ParentService {
   }
 
   getAttendance(sId: number): Observable<IAttendance> {
+    console.log(this.token);
     return this.http.get<IAttendance>(`${this.apiServerUrl}parent/student/attendance/${sId}`,
     {headers:this.headers_object});
   }
@@ -49,6 +50,7 @@ export class ParentService {
   addConcern(concern: IConcern, pId: string): Observable<IConcern> {
     let param = new HttpParams().set("parentId", pId);
     return this.http.post<IConcern>(`${this.apiServerUrl}parent/concern/add`, concern,
-    {params: param});
+    {params: param,
+    headers:this.headers_object});
   }
 }
