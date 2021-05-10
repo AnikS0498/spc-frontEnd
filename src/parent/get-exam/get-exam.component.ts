@@ -1,4 +1,6 @@
+import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+// import { debug } from 'console';
 import { IExam } from 'src/models/exam';
 import { ParentService } from 'src/services/parent.service';
 
@@ -6,6 +8,7 @@ import { ParentService } from 'src/services/parent.service';
   selector: 'app-get-exam',
   templateUrl: './get-exam.component.html',
   styleUrls: ['./get-exam.component.css'],
+  providers: [DatePipe]
 })
 export class GetExamComponent implements OnInit {
 
@@ -13,11 +16,11 @@ export class GetExamComponent implements OnInit {
   examDate: string;
   date : Date;
 
-  constructor(private parentService : ParentService) { }
+  constructor(private parentService : ParentService, private datePipe: DatePipe) { }
 
   ngOnInit(): void {
-    this.examDate = localStorage.getItem("studentID");
-    this.date = new Date(this.examDate);
+    this.date = JSON.parse(localStorage.getItem("examDate"));
+    console.log(this.date);
     this.getExam();
   }
   getExam(): void {

@@ -15,7 +15,7 @@ export class ParentComponent implements OnInit {
   showFee: boolean = false;
   showReportCard: boolean = false;
   studentId: string;
-  examDate: string;
+  examDate: Date;
 
   constructor(private parentService: ParentService, private router: Router) { }
 
@@ -45,7 +45,7 @@ export class ParentComponent implements OnInit {
     this.showDiary = false;
     this.showFee = false;
     this.showReportCard = false;
-    localStorage.setItem("examDate", this.examDate);
+    localStorage.setItem("examDate", JSON.stringify(this.examDate));
   }
 
   onClickFee() {
